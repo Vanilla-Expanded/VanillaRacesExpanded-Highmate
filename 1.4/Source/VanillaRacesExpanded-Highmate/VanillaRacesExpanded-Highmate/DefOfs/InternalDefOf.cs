@@ -11,7 +11,13 @@ namespace VanillaRacesExpandedHighmate
     [DefOf]
     public static class InternalDefOf
     {
-        
+        static InternalDefOf()
+        {
+            DefOfHelper.EnsureInitializedInCtor(typeof(InternalDefOf));
+        }
+
+        public static TraitDef VRE_Flirty;
+        public static ThoughtDef VRE_Flirted;
 
 
 

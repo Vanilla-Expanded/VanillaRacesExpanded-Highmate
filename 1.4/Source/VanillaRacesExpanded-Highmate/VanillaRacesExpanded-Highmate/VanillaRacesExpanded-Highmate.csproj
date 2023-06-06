@@ -296,6 +296,7 @@
   <ItemGroup>
     <Compile Include="DefOfs\InternalDefOf.cs" />
     <Compile Include="Harmony\HarmonyInstance.cs" />
+    <Compile Include="InteractionWorkers\InteractionWorker_FlirtingAttempt.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

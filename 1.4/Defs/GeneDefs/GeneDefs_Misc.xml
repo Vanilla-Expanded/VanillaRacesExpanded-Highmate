@@ -1,4 +1,26 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
-	
+
+	<GeneDef>
+		<defName>VRE_Flirty</defName>
+		<label>flirty</label>
+		<description>Carriers of this gene get emotional stimulation from playful flirting. They will offer kind, flirty words to brighten the moods of those around them. This helps in developing stronger bonds in the community, but may lead to romances and even break ups.</description>
+		
+		<forcedTraits>
+			<li>
+				<def>VRE_Flirty</def>
+			</li>
+		</forcedTraits>
+		<iconPath>UI/Icons/Genes/Gene_Flirty</iconPath>
+		<displayOrderInCategory>0</displayOrderInCategory>
+		<displayCategory>Reproduction</displayCategory>
+		<biostatMet>-1</biostatMet>
+		<biostatCpx>1</biostatCpx>
+	</GeneDef>
+
+
+
+
+
+
 </Defs>
