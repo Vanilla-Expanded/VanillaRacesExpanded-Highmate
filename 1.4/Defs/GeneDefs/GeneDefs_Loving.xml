@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<GeneDef ParentName="LibidoBase">
+		<defName>VRE_Libido_VeryHigh</defName>
+		<label>very high libido</label>
+		<description>Carriers of this gene are very keen to engage in lovin’ with their partner, or with anyone else for that matter. They can initiate lovin’ anywhere and anytime.</description>
+		<customEffectDescriptions>
+			<li>Increases the chance of lovin' dramatically.</li>
+		</customEffectDescriptions>
+		<iconPath>UI/Icons/Genes/Gene_VeryHighLibido</iconPath>
+		<displayOrderInCategory>10.1</displayOrderInCategory>
+		<lovinMTBFactor>0.25</lovinMTBFactor>
+	</GeneDef>
+</Defs>
