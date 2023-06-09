@@ -58,4 +58,21 @@
 			</li>
 		</modExtensions>
 	</GeneDef>
+	<GeneDef  ParentName="GeneHairStyleBase">
+		<defName>VRE_HighmateHair</defName>
+		<label>beautiful-haired</label>
+		<displayCategory>Cosmetic</displayCategory>
+		<description>Carriers of this gene are guaranteed to use specific Highmate hair styles.</description>
+		<iconPath>UI/Icons/Genes/Gene_BeautifulHaired</iconPath>
+		
+		<biostatCpx>0</biostatCpx>
+		<biostatMet>0</biostatMet>
+		<hairTagFilter>
+			<whitelist>true</whitelist>
+			<tags>
+				<li>VRE_HighmateHair</li>
+			</tags>
+		</hairTagFilter>
+		
+	</GeneDef>
 </Defs>
