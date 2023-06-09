@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
-
-
 	<TraitDef>
 		<defName>VRE_Flirty</defName>
 		<commonality>1</commonality>
@@ -9,7 +7,6 @@
 			<li>
 				<label>flirty</label>
 				<description>{PAWN_nameDef} is always ready with a flirtatious comment or a playful compliment, lifting the spirits of those around {PAWN_objective}. {PAWN_pronoun} has a knack for making others feel special and desired, however this may sometimes lead to complicated situations when {PAWN_pronoun}'s playful intentions are misinterpreted.</description>
-
 			</li>
 		</degreeDatas>
 		<conflictingTraits>
@@ -17,7 +14,18 @@
 			<li>Psychopath</li>
 		</conflictingTraits>
 	</TraitDef>
-
-
-
+	<TraitDef>
+		<defName>VRE_Distressed</defName>
+		<commonality>1</commonality>
+		<degreeDatas>
+			<li>
+				<label>distressed</label>
+				<description>{PAWN_nameDef} is exceptionally empathetic and sensitive to the suffering of others. Whenever {PAWN_pronoun} witnesses pain or hardship, it deeply affects {PAWN_objective}, resulting in memories of these events haunting {PAWN_nameDef} for a much longer time.</description>
+			</li>
+		</degreeDatas>
+		<conflictingTraits>
+			<li>Bloodlust</li>
+			<li>Psychopath</li>
+		</conflictingTraits>
+	</TraitDef>
 </Defs>

@@ -295,9 +295,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DefOfs\InternalDefOf.cs" />
+    <Compile Include="GameComponents\GameComponent_DistressedTraitSaver.cs" />
+    <Compile Include="Harmony\Gene_Notify_PawnDied.cs" />
     <Compile Include="Harmony\HarmonyInstance.cs" />
+    <Compile Include="Harmony\MemoryThoughtHandler_TryGainMemory.cs" />
+    <Compile Include="Harmony\Thought_Memory_DurationTicks.cs" />
+    <Compile Include="Harmony\TraitSet_RemoveTrait.cs" />
+    <Compile Include="Harmony\TraitSet_GainTrait.cs" />
     <Compile Include="InteractionWorkers\InteractionWorker_FlirtingAttempt.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StaticCollections\StaticCollectionsClass.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
