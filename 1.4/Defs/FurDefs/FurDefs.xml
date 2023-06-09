@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <FurDef>
+    <defName>VRE_PerfectBody</defName>
+    <noGraphic>true</noGraphic>
+    <bodyTypeGraphicPaths>
+      <Male>Things/Pawn/Humanlike/PerfectBody/PerfectBody_Male</Male>
+      <Female>Things/Pawn/Humanlike/PerfectBody/PerfectBody_Female</Female>
+      <Hulk>Things/Pawn/Humanlike/PerfectBody/PerfectBody_Hulk</Hulk>
+      <Fat>Things/Pawn/Humanlike/PerfectBody/PerfectBody_Fat</Fat>
+      <Thin>Things/Pawn/Humanlike/PerfectBody/PerfectBody_Thin</Thin>
+      <Child>Things/Pawn/Humanlike/Bodies/Naked_Child</Child>
+      <Baby>Things/Pawn/Humanlike/Bodies/Naked_Child</Baby><!-- Always covered by swaddled graphic -->
+    </bodyTypeGraphicPaths>
+  </FurDef>
+  
+  
+
+</Defs>
