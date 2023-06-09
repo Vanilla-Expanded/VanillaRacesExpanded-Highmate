@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Patch>
 
-	
+	<Operation Class="PatchOperationAdd">
+		<xpath>/Defs/XenotypeDef[defName="Highmate"]/genes</xpath>
+		<value>
+            <li>VRE_FelineEars</li>
+			 <li>VRE_FelineTail</li>
+			<li>VRE_PerfectBody</li>
+			
+		</value>
+	</Operation>
 	
 </Patch>
 
