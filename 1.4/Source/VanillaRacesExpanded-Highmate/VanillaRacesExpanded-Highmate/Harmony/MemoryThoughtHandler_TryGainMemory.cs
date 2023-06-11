@@ -1,7 +1,7 @@
 ﻿using HarmonyLib;
 using RimWorld;
-
 using Verse;
+using System;
 using UnityEngine;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,6 +14,7 @@ namespace VanillaRacesExpandedHighmate
 
     [HarmonyPatch(typeof(MemoryThoughtHandler))]
     [HarmonyPatch("TryGainMemory")]
+    [HarmonyPatch(new Type[] { typeof(Thought_Memory), typeof(Pawn) })]
     public static class VanillaRacesExpandedHighmate_MemoryThoughtHandler_TryGainMemory_Patch
     {
         [HarmonyPostfix]
