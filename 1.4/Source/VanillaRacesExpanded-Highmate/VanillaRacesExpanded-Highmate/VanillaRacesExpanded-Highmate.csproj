@@ -299,7 +299,7 @@
     <Compile Include="Enums\LovinNeedCategory.cs" />
     <Compile Include="GameComponents\GameComponent_DistressedTraitSaver.cs" />
     <Compile Include="Harmony\Gene_Notify_PawnDied.cs" />
-    <Compile Include="Harmony\GenHostility_HostileTo.cs" />
+    <Compile Include="Harmony\AttackTargetFinder_NonCombatantScore.cs" />
     <Compile Include="Harmony\HarmonyInstance.cs" />
     <Compile Include="Harmony\JobDriver_Lovin_GenerateRandomMinTicksToNextLovin.cs" />
     <Compile Include="Harmony\MemoryThoughtHandler_TryGainMemory.cs" />
