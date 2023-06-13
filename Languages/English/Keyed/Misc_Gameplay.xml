@@ -2,6 +2,11 @@
 <LanguageData>
 
 
+<VRE_EnableCatHighmates>Enable "Cat genes" on Highmates</VRE_EnableCatHighmates>
+<VRE_EnableCatHighmatesDescription>Disabling this toggle will make newly created Highmates appear without the Feline ears and Feline tail genes. Bear in mind this will have no effect on already existing Highmates. Will require a game reload.</VRE_EnableCatHighmatesDescription>
 
+<VRE_NotEnoughLovin>Demands lovin'</VRE_NotEnoughLovin>
+<VRE_LovinNeed>Lovin' need</VRE_LovinNeed>
+<VRE_LovinNeedDesc>These people have a too low lovin' need (less than 50%). If they reach 0% lovin' in approximately 15 days, they will attempt to leave the colony:\n\n{0}</VRE_LovinNeedDesc>
 
 </LanguageData>

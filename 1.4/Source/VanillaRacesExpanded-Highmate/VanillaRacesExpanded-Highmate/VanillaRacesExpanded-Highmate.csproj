@@ -294,17 +294,27 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Alerts\Alert_PawnsNeedLovin.cs" />
     <Compile Include="DefOfs\InternalDefOf.cs" />
+    <Compile Include="Enums\LovinNeedCategory.cs" />
     <Compile Include="GameComponents\GameComponent_DistressedTraitSaver.cs" />
     <Compile Include="Harmony\Gene_Notify_PawnDied.cs" />
+    <Compile Include="Harmony\GenHostility_HostileTo.cs" />
     <Compile Include="Harmony\HarmonyInstance.cs" />
+    <Compile Include="Harmony\JobDriver_Lovin_GenerateRandomMinTicksToNextLovin.cs" />
     <Compile Include="Harmony\MemoryThoughtHandler_TryGainMemory.cs" />
+    <Compile Include="Harmony\PregnancyUtility_GetInheritedGenes.cs" />
     <Compile Include="Harmony\Thought_Memory_DurationTicks.cs" />
     <Compile Include="Harmony\TraitSet_RemoveTrait.cs" />
     <Compile Include="Harmony\TraitSet_GainTrait.cs" />
     <Compile Include="InteractionWorkers\InteractionWorker_FlirtingAttempt.cs" />
+    <Compile Include="Needs\Need_Lovin.cs" />
+    <Compile Include="Options\Mod.cs" />
+    <Compile Include="Options\Settings.cs" />
+    <Compile Include="PatchOperations\PatchOperationModOption.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StaticCollections\StaticCollectionsClass.cs" />
+    <Compile Include="Thoughts\ThoughtWorker_LovinNeed.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

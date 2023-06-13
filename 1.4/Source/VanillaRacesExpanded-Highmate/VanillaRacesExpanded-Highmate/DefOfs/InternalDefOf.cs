@@ -23,7 +23,12 @@ namespace VanillaRacesExpandedHighmate
         public static ThoughtDef VRE_WhatAPerfectBody;
 
         public static GeneDef VRE_PerfectBody;
+        public static GeneDef VRE_DominantGenome;
+        public static GeneDef VRE_RecessiveGenome;
+        public static GeneDef VRE_Harmless;
+        public static GeneDef VRE_LovinDependency;
 
+        public static MentalBreakDef GiveUpExit;
 
         public static ThoughtDef KnowGuestExecuted;
         public static ThoughtDef KnowColonistExecuted;

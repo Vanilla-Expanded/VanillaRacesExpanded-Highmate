@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+
+
+  <NeedDef>
+    <defName>VRE_Lovin</defName>
+    <needClass>VanillaRacesExpandedHighmate.Need_Lovin</needClass>
+    <label>lovin'</label>
+    <description>People with lovin' dependency have a strong desire to partake in lovin' on regular basis. If it isn't satisfied, the person will become very unhappy and may decide to abandon the colony in pursuit of lovin'.</description>
+    <minIntelligence>Humanlike</minIntelligence>
+    <colonistAndPrisonersOnly>true</colonistAndPrisonersOnly>
+	<baseLevel>1</baseLevel>
+    <listPriority>90</listPriority>
+	<developmentalStageFilter>Adult</developmentalStageFilter>
+	<onlyIfCausedByGene>true</onlyIfCausedByGene>
+   
+  </NeedDef>
+  
+
+  
+</Defs>
