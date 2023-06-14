@@ -9,4 +9,13 @@
 <VRE_LovinNeed>Lovin' need</VRE_LovinNeed>
 <VRE_LovinNeedDesc>These people have a too low lovin' need (less than 50%). If they reach 0% lovin' in approximately 15 days, they will attempt to leave the colony:\n\n{0}</VRE_LovinNeedDesc>
 
+<VRE_MessageCantUseLovinOnOtherFactions>This ability can't be used on members of other factions</VRE_MessageCantUseLovinOnOtherFactions>
+<VRE_MessageCantUseLovinOnResistingPersons>This ability can't be used on enemies</VRE_MessageCantUseLovinOnResistingPersons>
+<VRE_CantUseLovinLowOpinion>{0} cannot initiate lovin’ with {1} as {1} has too low opinion of {0} (Opinion of {0}: {2})</VRE_CantUseLovinLowOpinion>
+<VRE_TooYoungForLovin>{0} cannot initiate lovin’ with {1} as {1} is too young.</VRE_TooYoungForLovin>
+<VRE_TooYoungForLovinCaster>{0} cannot initiate lovin’ with {1} as {0} is too young.</VRE_TooYoungForLovinCaster>
+<VRE_CantUseLovinWithTrait>{0} cannot initiate lovin’ with {1} as {1} has {2}.</VRE_CantUseLovinWithTrait>
+<VRE_RelationshipWillBreak>{0} will initiate lovin’ with {1}, despite being in a relationship with {2}. This will result in a break up.</VRE_RelationshipWillBreak>
+<VRE_RelationshipWillBreakTarget>{0} will initiate lovin’ with {1}, despite {1} being in a relationship with {2}. This will result in a break up.</VRE_RelationshipWillBreakTarget>
+
 </LanguageData>

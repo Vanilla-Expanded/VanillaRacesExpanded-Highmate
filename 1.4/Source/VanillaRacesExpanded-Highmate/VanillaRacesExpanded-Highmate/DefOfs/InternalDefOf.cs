@@ -73,6 +73,11 @@ namespace VanillaRacesExpandedHighmate
         public static ThoughtDef PrisonerBanishedToDie;
         public static ThoughtDef BondedAnimalBanished;
 
+        [MayRequireIdeology]
+        public static PreceptDef Lovin_FreeApproved;
+
+        [MayRequire("VanillaExpanded.VanillaTraitsExpanded")]
+        public static TraitDef VTE_Prude;
 
 
 
