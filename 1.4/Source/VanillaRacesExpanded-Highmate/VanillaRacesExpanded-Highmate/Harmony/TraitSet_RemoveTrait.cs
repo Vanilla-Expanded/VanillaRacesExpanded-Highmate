@@ -12,6 +12,7 @@ using Verse.AI;
 namespace VanillaRacesExpandedHighmate
 {
 
+
     [HarmonyPatch(typeof(TraitSet))]
     [HarmonyPatch("RemoveTrait")]
     public static class VanillaRacesExpandedHighmate_TraitSet_RemoveTrait_Patch
@@ -29,6 +30,7 @@ namespace VanillaRacesExpandedHighmate
 
                 }
             }
+            BondUtils.TryApplyBondEffects(___pawn);
         }
     }
 }

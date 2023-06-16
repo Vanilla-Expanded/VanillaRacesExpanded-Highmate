@@ -1,0 +1,211 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<HediffDef Name="VRE_BondHediff_Base" Abstract="True">
+		<hediffClass>HediffWithComps</hediffClass>
+	</HediffDef>
+
+	<HediffDef ParentName="VRE_BondHediff_Base">
+		<defName>VRE_PsychicBondBloodlust</defName>
+		<label>Psychic bond (bloodlust)</label>
+		<description>text.todo</description>
+		<stages>
+			<li>
+				<statFactors>
+					<MeleeDamageFactor>1.5</MeleeDamageFactor>
+				</statFactors>
+			</li>
+		</stages>
+	</HediffDef>
+
+	<HediffDef ParentName="VRE_BondHediff_Base">
+		<defName>VRE_PsychicBondPsychopath</defName>
+		<label>Psychic bond (psychopath)</label>
+		<description>text.todo</description>
+		<stages>
+			<li>
+				<statFactors>
+					<MeleeDamageFactor>1.5</MeleeDamageFactor>
+				</statFactors>
+			</li>
+		</stages>
+	</HediffDef>
+
+	<HediffDef ParentName="VRE_BondHediff_Base">
+		<defName>VRE_PsychicBondFastLearner</defName>
+		<label>Psychic bond (fast learner)</label>
+		<description>text.todo</description>
+		<stages>
+			<li>
+				<statOffsets>
+					<GlobalLearningFactor>0.25</GlobalLearningFactor>
+				</statOffsets>
+			</li>
+		</stages>
+	</HediffDef>
+
+	<HediffDef ParentName="VRE_BondHediff_Base">
+		<defName>VRE_PsychicBondTooSmart</defName>
+		<label>Psychic bond (too smart)</label>
+		<description>text.todo</description>
+		<stages>
+			<li>
+				<statOffsets>
+					<GlobalLearningFactor>0.25</GlobalLearningFactor>
+				</statOffsets>
+			</li>
+		</stages>
+	</HediffDef>
+
+	<HediffDef ParentName="VRE_BondHediff_Base">
+		<defName>VRE_PsychicBondIndustrious</defName>
+		<label>Psychic bond (industrious)</label>
+		<description>text.todo</description>
+		<stages>
+			<li>
+				<statOffsets>
+					<WorkSpeedGlobal>0.10</WorkSpeedGlobal>
+				</statOffsets>
+			</li>
+		</stages>
+	</HediffDef>
+
+	<HediffDef ParentName="VRE_BondHediff_Base">
+		<defName>VRE_PsychicBondHardWorker</defName>
+		<label>Psychic bond (hard worker)</label>
+		<description>text.todo</description>
+		<stages>
+			<li>
+				<statOffsets>
+					<WorkSpeedGlobal>0.10</WorkSpeedGlobal>
+				</statOffsets>
+			</li>
+		</stages>
+	</HediffDef>
+
+	<HediffDef ParentName="VRE_BondHediff_Base">
+		<defName>VRE_PsychicBondSanguine</defName>
+		<label>Psychic bond (sanguine)</label>
+		<description>text.todo</description>
+		<stages>
+			<li></li>
+		</stages>
+	</HediffDef>
+
+	<HediffDef ParentName="VRE_BondHediff_Base">
+		<defName>VRE_PsychicBondOptimist</defName>
+		<label>Psychic bond (optimist)</label>
+		<description>text.todo</description>
+		<stages>
+			<li></li>
+		</stages>
+	</HediffDef>
+
+	<ThoughtDef>
+		<defName>VRE_PsychicBondSanguine</defName>
+		<workerClass>ThoughtWorker_Hediff</workerClass>
+		<hediff>VRE_PsychicBondSanguine</hediff>
+		<validWhileDespawned>true</validWhileDespawned>
+		<developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
+		<stages>
+			<li>
+				<label>Psychic bond (sanguine)</label>
+				<description>text.todo.</description>
+				<baseMoodEffect>3</baseMoodEffect>
+			</li>
+		</stages>
+	</ThoughtDef>
+
+	<ThoughtDef>
+		<defName>VRE_PsychicBondOptimist</defName>
+		<workerClass>ThoughtWorker_Hediff</workerClass>
+		<hediff>VRE_PsychicBondOptimist</hediff>
+		<validWhileDespawned>true</validWhileDespawned>
+		<developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
+		<stages>
+			<li>
+				<label>Psychic bond (optimist)</label>
+				<description>text.todo.</description>
+				<baseMoodEffect>3</baseMoodEffect>
+			</li>
+		</stages>
+	</ThoughtDef>
+	
+	<HediffDef ParentName="VRE_BondHediff_Base">
+		<defName>VRE_PsychicBondIronWilled</defName>
+		<label>Psychic bond (iron-willed)</label>
+		<description>text.todo</description>
+		<stages>
+			<li>
+				<statOffsets>
+					<MentalBreakThreshold>-0.09</MentalBreakThreshold>
+				</statOffsets>
+			</li>
+		</stages>
+	</HediffDef>
+	
+	<HediffDef ParentName="VRE_BondHediff_Base">
+		<defName>VRE_PsychicBondSteadfast</defName>
+		<label>Psychic bond (steadfast)</label>
+		<description>text.todo</description>
+		<stages>
+			<li>
+				<statOffsets>
+					<MentalBreakThreshold>-0.09</MentalBreakThreshold>
+				</statOffsets>
+			</li>
+		</stages>
+	</HediffDef>
+	
+	<HediffDef ParentName="VRE_BondHediff_Base">
+		<defName>VRE_PsychicBondCarefulShooter</defName>
+		<label>Psychic bond (careful shooter)</label>
+		<description>text.todo</description>
+		<stages>
+			<li>
+				<statOffsets>
+					<ShootingAccuracyPawn>2</ShootingAccuracyPawn>
+				</statOffsets>
+			</li>
+		</stages>
+	</HediffDef>
+	
+	<HediffDef ParentName="VRE_BondHediff_Base">
+		<defName>VRE_PsychicBondPsychicallyHypersensitive</defName>
+		<label>Psychic bond (psychically hypersensitive)</label>
+		<description>text.todo</description>
+		<stages>
+			<li>
+				<statOffsets>
+					<PsychicSensitivity>0.4</PsychicSensitivity>
+				</statOffsets>
+			</li>
+		</stages>
+	</HediffDef>
+	
+	<HediffDef ParentName="VRE_BondHediff_Base">
+		<defName>VRE_PsychicBondPsychicallySensitive</defName>
+		<label>Psychic bond (psychically sensitive)</label>
+		<description>text.todo</description>
+		<stages>
+			<li>
+				<statOffsets>
+					<PsychicSensitivity>0.4</PsychicSensitivity>
+				</statOffsets>
+			</li>
+		</stages>
+	</HediffDef>
+	
+	<HediffDef ParentName="VRE_BondHediff_Base">
+		<defName>VRE_PsychicBondGreatMemory</defName>
+		<label>Psychic bond (great memory)</label>
+		<description>text.todo</description>
+	</HediffDef>
+	
+	<HediffDef ParentName="VRE_BondHediff_Base">
+		<defName>VRE_PsychicBondAbrasive</defName>
+		<label>Psychic bond (abrasive)</label>
+		<description>text.todo</description>
+	</HediffDef>
+</Defs>
+

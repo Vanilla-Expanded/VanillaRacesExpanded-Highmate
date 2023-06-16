@@ -85,7 +85,9 @@ namespace VanillaRacesExpandedHighmate
         [MayRequire("VanillaExpanded.VanillaTraitsExpanded")]
         public static TraitDef VTE_Prude;
 
-
-
+        public static HediffDef VRE_PsychicBondBloodlust;
+        public static HediffDef VRE_PsychicBondPsychopath;
+        public static HediffDef VRE_PsychicBondGreatMemory;
+        public static HediffDef VRE_PsychicBondAbrasive;
     }
 }
