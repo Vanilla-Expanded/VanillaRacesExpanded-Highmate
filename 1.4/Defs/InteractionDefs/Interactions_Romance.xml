@@ -5,7 +5,7 @@
 		<defName>VRE_FlirtingAttempt</defName>
 		<label>flirty words</label>
 		<workerClass>VanillaRacesExpandedHighmate.InteractionWorker_FlirtingAttempt</workerClass>
-		<symbol>Things/Mote/SpeechSymbols/Romance</symbol>
+		<symbol>UI/SocialInteractions/FlirtyWords</symbol>
 		<logRulesInitiator>
 			<rulesStrings>
 				<li>r_logentry->[INITIATOR_nameDef] [wooed] [RECIPIENT_nameDef] by [wootactic].</li>
