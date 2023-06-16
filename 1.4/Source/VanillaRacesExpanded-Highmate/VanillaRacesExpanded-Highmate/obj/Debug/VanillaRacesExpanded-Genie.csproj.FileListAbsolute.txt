@@ -1,4 +1,0 @@
-C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\VanillaRacesExpanded-Genie\1.4\Assemblies\VanillaRacesExpanded-Genie.dll
-C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\VanillaRacesExpanded-Genie\1.4\Source\VanillaRacesExpanded-Genie\VanillaRacesExpanded-Genie\obj\Debug\VanillaRacesExpanded-Genie.csproj.AssemblyReference.cache
-C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\VanillaRacesExpanded-Genie\1.4\Source\VanillaRacesExpanded-Genie\VanillaRacesExpanded-Genie\obj\Debug\VanillaRacesExpanded-Genie.csproj.CoreCompileInputs.cache
-C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\VanillaRacesExpanded-Genie\1.4\Source\VanillaRacesExpanded-Genie\VanillaRacesExpanded-Genie\obj\Debug\VanillaRacesExpanded-Genie.dll

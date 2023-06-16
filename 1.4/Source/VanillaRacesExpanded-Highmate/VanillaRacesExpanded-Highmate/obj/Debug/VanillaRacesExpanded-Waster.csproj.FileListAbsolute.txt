@@ -1,4 +1,0 @@
-C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\VanillaRacesExpanded-Waster\1.4\Assemblies\VanillaRacesExpanded-Waster.dll
-C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\VanillaRacesExpanded-Waster\1.4\Source\VanillaRacesExpanded-Waster\VanillaRacesExpanded-Waster\obj\Debug\VanillaRacesExpanded-Waster.csproj.AssemblyReference.cache
-C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\VanillaRacesExpanded-Waster\1.4\Source\VanillaRacesExpanded-Waster\VanillaRacesExpanded-Waster\obj\Debug\VanillaRacesExpanded-Waster.csproj.CoreCompileInputs.cache
-C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\VanillaRacesExpanded-Waster\1.4\Source\VanillaRacesExpanded-Waster\VanillaRacesExpanded-Waster\obj\Debug\VanillaRacesExpanded-Waster.dll

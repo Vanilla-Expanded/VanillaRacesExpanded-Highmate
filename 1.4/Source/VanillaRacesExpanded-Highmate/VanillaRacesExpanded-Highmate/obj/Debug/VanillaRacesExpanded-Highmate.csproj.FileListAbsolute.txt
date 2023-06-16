@@ -1,4 +1,0 @@
-C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\VanillaRacesExpanded-Highmate\1.4\Assemblies\VanillaRacesExpanded-Highmate.dll
-C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\VanillaRacesExpanded-Highmate\1.4\Source\VanillaRacesExpanded-Highmate\VanillaRacesExpanded-Highmate\obj\Debug\VanillaRacesExpanded-Highmate.csproj.AssemblyReference.cache
-C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\VanillaRacesExpanded-Highmate\1.4\Source\VanillaRacesExpanded-Highmate\VanillaRacesExpanded-Highmate\obj\Debug\VanillaRacesExpanded-Highmate.csproj.CoreCompileInputs.cache
-C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\VanillaRacesExpanded-Highmate\1.4\Source\VanillaRacesExpanded-Highmate\VanillaRacesExpanded-Highmate\obj\Debug\VanillaRacesExpanded-Highmate.dll
