@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<JobDef>
+		<defName>VRE_InitiateLovin</defName>
+		<driverClass>VanillaRacesExpandedHighmate.JobDriver_InitiateLovin</driverClass>
+		<reportString>initiating lovin'.</reportString>
+		 <casualInterruptible>false</casualInterruptible>
+	</JobDef>
+	
+
+	
+	
+</Defs>

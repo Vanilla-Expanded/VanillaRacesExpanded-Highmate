@@ -6,6 +6,7 @@ using RimWorld.Planet;
 using System.Collections.Generic;
 using VanillaRacesExpandedHighmate;
 using System.Linq;
+using Verse.AI;
 
 namespace VanillaRacesExpandedHighmate
 {
@@ -25,35 +26,12 @@ namespace VanillaRacesExpandedHighmate
             base.Apply(target, dest);
             Pawn pawn = target.Pawn;
             if (pawn != null)
-            {
-                if (!ModsConfig.IdeologyActive || (ModsConfig.IdeologyActive &&
-                pawn.Ideo?.HasPrecept(InternalDefOf.Lovin_FreeApproved) != true &&
-                parent.pawn.Ideo?.HasPrecept(InternalDefOf.Lovin_FreeApproved) != true))
-                {
-                    List<Pawn> casterLovers = GetLovers(parent.pawn);
-                    List<Pawn> targetLovers = GetLovers(pawn);
+            {               
 
-
-                    if (casterLovers.Count>0 && !casterLovers.Contains(pawn))
-                    {
-                        Messages.Message("VRE_RelationshipWillBreak".Translate(parent.pawn.LabelShortCap, pawn.LabelShortCap,casterLovers.ToStringSafeEnumerable()), pawn, MessageTypeDefOf.RejectInput, historical: false);
-
-                    }
-
-                    if (targetLovers.Count > 0 && !targetLovers.Contains(parent.pawn))
-                    {
-                        Messages.Message("VRE_RelationshipWillBreakTarget".Translate(parent.pawn.LabelShortCap, pawn.LabelShortCap, targetLovers.ToStringSafeEnumerable()), pawn, MessageTypeDefOf.RejectInput, historical: false);
-
-                    }
-
-                }
-
-
-                Log.Message("le fuck");
-
+                Job job = JobMaker.MakeJob(InternalDefOf.VRE_InitiateLovin, pawn);
+                parent.pawn.jobs.StartJob(job, JobCondition.InterruptForced);           
 
             }
-
 
         }
 
@@ -123,9 +101,7 @@ namespace VanillaRacesExpandedHighmate
                         Messages.Message("VRE_CantUseLovinLowOpinion".Translate(parent.pawn.LabelShortCap, pawn.LabelShortCap, pawn.relations.OpinionOf(parent.pawn)), pawn, MessageTypeDefOf.RejectInput, historical: false);
                     }
                     return false;
-
                 }
-
             }
 
             if (pawn.story?.traits?.HasTrait(TraitDefOf.Asexual) == true)
@@ -147,11 +123,55 @@ namespace VanillaRacesExpandedHighmate
 
             }
 
+            if (pawn.relations?.FamilyByBlood?.Contains(parent.pawn)==true)
+            {
+                if (throwMessages)
+                {
+                    Messages.Message("VRE_CantUseOnFamily".Translate(parent.pawn.LabelShortCap, pawn.LabelShortCap), pawn, MessageTypeDefOf.RejectInput, historical: false);
+                }
+                return false;
+
+            }
+
+
 
             return true;
 
 
         }
+
+        public override Window ConfirmationDialog(LocalTargetInfo target, Action confirmAction)
+        {
+            Pawn pawn = target.Pawn;
+            if (pawn != null)
+            {
+
+               if (!ModsConfig.IdeologyActive || (ModsConfig.IdeologyActive &&
+               pawn.Ideo?.HasPrecept(InternalDefOf.Lovin_FreeApproved) != true &&
+               parent.pawn.Ideo?.HasPrecept(InternalDefOf.Lovin_FreeApproved) != true))
+                {
+                    List<Pawn> casterLovers = GetLovers(parent.pawn);
+                    List<Pawn> targetLovers = GetLovers(pawn);
+
+                    if (casterLovers.Count > 0 && !casterLovers.Contains(pawn))
+                    {
+                        return Dialog_MessageBox.CreateConfirmation("VRE_RelationshipWillBreak".Translate(parent.pawn.LabelShortCap, pawn.LabelShortCap, casterLovers.ToStringSafeEnumerable()), confirmAction, destructive: true);
+
+                    }
+                    if (targetLovers.Count > 0 && !targetLovers.Contains(parent.pawn))
+                    {
+                        return Dialog_MessageBox.CreateConfirmation("VRE_RelationshipWillBreakTarget".Translate(parent.pawn.LabelShortCap, pawn.LabelShortCap, targetLovers.ToStringSafeEnumerable()), confirmAction, destructive: true);
+                    }
+                }
+
+          
+            }
+            return null;
+        }
+
+
+       
+
 
 
         public List<Pawn> GetLovers(Pawn pawn)

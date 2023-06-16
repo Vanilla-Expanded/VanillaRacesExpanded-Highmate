@@ -30,6 +30,9 @@ namespace VanillaRacesExpandedHighmate
 
         public static MentalBreakDef GiveUpExit;
 
+        public static JobDef VRE_InitiateLovin;
+      
+
         public static ThoughtDef KnowGuestExecuted;
         public static ThoughtDef KnowColonistExecuted;
         public static ThoughtDef KnowPrisonerDiedInnocent;

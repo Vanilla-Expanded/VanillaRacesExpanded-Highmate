@@ -296,6 +296,7 @@
   <ItemGroup>
     <Compile Include="Abilities\CompAbilityEffect_InitiateLovin.cs" />
     <Compile Include="Abilities\Properties\CompProperties_InitiateLovin.cs" />
+    <Compile Include="AI\JobDrivers\JobDriver_InitiateLovin.cs" />
     <Compile Include="Alerts\Alert_PawnsNeedLovin.cs" />
     <Compile Include="DefOfs\InternalDefOf.cs" />
     <Compile Include="Enums\LovinNeedCategory.cs" />

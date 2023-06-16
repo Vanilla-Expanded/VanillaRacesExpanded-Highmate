@@ -17,5 +17,6 @@
 <VRE_CantUseLovinWithTrait>{0} cannot initiate lovin’ with {1} as {1} has {2}.</VRE_CantUseLovinWithTrait>
 <VRE_RelationshipWillBreak>{0} will initiate lovin’ with {1}, despite being in a relationship with {2}. This will result in a break up.</VRE_RelationshipWillBreak>
 <VRE_RelationshipWillBreakTarget>{0} will initiate lovin’ with {1}, despite {1} being in a relationship with {2}. This will result in a break up.</VRE_RelationshipWillBreakTarget>
+<VRE_CantUseOnFamily>{0} can't initiate lovin’ with {1}, as they are blood relatives.</VRE_CantUseOnFamily>
 
 </LanguageData>
