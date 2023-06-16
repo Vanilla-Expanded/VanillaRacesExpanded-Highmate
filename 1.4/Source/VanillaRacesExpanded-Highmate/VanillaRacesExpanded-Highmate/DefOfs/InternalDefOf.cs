@@ -31,7 +31,10 @@ namespace VanillaRacesExpandedHighmate
         public static MentalBreakDef GiveUpExit;
 
         public static JobDef VRE_InitiateLovin;
-      
+
+        public static RulePackDef VRE_Sentence_FlirtingAttemptAccepted;
+        public static RulePackDef VRE_Sentence_FlirtingAttemptRejected;
+
 
         public static ThoughtDef KnowGuestExecuted;
         public static ThoughtDef KnowColonistExecuted;

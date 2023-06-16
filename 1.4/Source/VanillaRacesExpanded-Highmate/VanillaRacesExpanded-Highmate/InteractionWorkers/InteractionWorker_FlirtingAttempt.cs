@@ -53,7 +53,11 @@ namespace VanillaRacesExpandedHighmate
 
                 initiator.needs?.mood?.thoughts?.memories?.TryGainMemory(InternalDefOf.VRE_Flirted, recipient);
                 recipient.needs?.mood?.thoughts?.memories?.TryGainMemory(InternalDefOf.VRE_Flirted, initiator);
-
+                extraSentencePacks.Add(InternalDefOf.VRE_Sentence_FlirtingAttemptAccepted);
+            }
+            else
+            {
+                extraSentencePacks.Add(InternalDefOf.VRE_Sentence_FlirtingAttemptRejected);
             }
            
         }
