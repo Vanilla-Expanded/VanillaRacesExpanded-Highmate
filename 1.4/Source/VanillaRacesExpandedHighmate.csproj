@@ -72,6 +72,7 @@
     <Compile Include="Harmony\AttackTargetFinder_NonCombatantScore.cs" />
     <Compile Include="Harmony\Gene_Notify_PawnDied.cs" />
     <Compile Include="Harmony\HarmonyInstance.cs" />
+    <Compile Include="PregnancyApproaches\JobDriver_Lovin_Patch.cs" />
     <Compile Include="PsychicBond\HediffSet_AddDirect_Patch.cs" />
     <Compile Include="Harmony\JobDriver_Lovin_GenerateRandomMinTicksToNextLovin.cs" />
     <Compile Include="Harmony\MemoryThoughtHandler_TryGainMemory.cs" />
@@ -92,12 +93,12 @@
     <Compile Include="Options\Mod.cs" />
     <Compile Include="Options\Settings.cs" />
     <Compile Include="PatchOperations\PatchOperationModOption.cs" />
-    <Compile Include="PregnancyApproach\Pawn_RelationsTracker_ExposeData_Patch.cs" />
-    <Compile Include="PregnancyApproach\Pawn_RelationsTracker_SetPregnancyApproach_Patch.cs" />
-    <Compile Include="PregnancyApproach\PregnancyApproachData.cs" />
-    <Compile Include="PregnancyApproach\PregnancyApproachUtils.cs" />
-    <Compile Include="PregnancyApproach\PregnancyUtility_PregnancyChanceForPartners_Patch.cs" />
-    <Compile Include="PregnancyApproach\SocialCardUtility_DrawPregnancyApproach_Patch.cs" />
+    <Compile Include="PregnancyApproaches\Pawn_RelationsTracker_ExposeData_Patch.cs" />
+    <Compile Include="PregnancyApproaches\Pawn_RelationsTracker_SetPregnancyApproach_Patch.cs" />
+    <Compile Include="PregnancyApproaches\PregnancyApproachData.cs" />
+    <Compile Include="PregnancyApproaches\PregnancyApproachUtils.cs" />
+    <Compile Include="PregnancyApproaches\PregnancyUtility_PregnancyChanceForPartners_Patch.cs" />
+    <Compile Include="PregnancyApproaches\SocialCardUtility_DrawPregnancyApproach_Patch.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="PsychicBond\BondTraitEffect.cs" />
     <Compile Include="PsychicBond\BondUtils.cs" />

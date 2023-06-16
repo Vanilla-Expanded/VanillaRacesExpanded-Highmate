@@ -9,9 +9,14 @@ namespace VanillaRacesExpandedHighmate
     {
         public static void Postfix(Pawn woman, Pawn man, ref float __result)
         {
-            if (woman.relations.GetAdditionalPregnancyApproachData().pawnsWithPsychicConception.Contains(man))
+            var data = woman.relations.GetAdditionalPregnancyApproachData();
+            if (data.pawnsWithPsychicConception.Contains(man))
             {
                 __result = 20f;
+            }
+            else if (data.pawnsWithLovinForPleasure.Contains(man))
+            {
+                __result = 0f;
             }
         }
     }

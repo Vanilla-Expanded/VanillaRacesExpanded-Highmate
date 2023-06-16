@@ -50,10 +50,18 @@ namespace VanillaRacesExpandedHighmate
         }
         public static TipSignal InterceptTooltip(TipSignal tipSignal, CachedSocialTabEntry entry, Pawn selPawnForSocialInfo, AcceptanceReport acceptanceReport)
         {
-            if (selPawnForSocialInfo.relations.GetAdditionalPregnancyApproachData().pawnsWithPsychicConception.Contains(entry.otherPawn))
+            var data = selPawnForSocialInfo.relations.GetAdditionalPregnancyApproachData();
+            if (data.pawnsWithPsychicConception.Contains(entry.otherPawn))
             {
                 return acceptanceReport ? ("PregnancyApproach".Translate().Colorize(ColoredText.TipSectionTitleColor) + "\n" +
                     "VRE_PsychicConceptionDesc".Translate() + "\n\n" + "ClickToChangePregnancyApproach".Translate().Colorize
+                    (ColoredText.SubtleGrayColor)) : ("PregnancyNotPossible".Translate().Resolve() + ": "
+                    + acceptanceReport.Reason.CapitalizeFirst());
+            }
+            else if (data.pawnsWithLovinForPleasure.Contains(entry.otherPawn))
+            {
+                return acceptanceReport ? ("PregnancyApproach".Translate().Colorize(ColoredText.TipSectionTitleColor) + "\n" +
+                    "VRE_LovinForPleasureDesc".Translate() + "\n\n" + "ClickToChangePregnancyApproach".Translate().Colorize
                     (ColoredText.SubtleGrayColor)) : ("PregnancyNotPossible".Translate().Resolve() + ": "
                     + acceptanceReport.Reason.CapitalizeFirst());
             }
@@ -61,20 +69,40 @@ namespace VanillaRacesExpandedHighmate
         }
         public static Texture2D InterceptTexture(Texture2D texture, CachedSocialTabEntry entry, Pawn selPawnForSocialInfo)
         {
-            if (selPawnForSocialInfo.relations.GetAdditionalPregnancyApproachData().pawnsWithPsychicConception.Contains(entry.otherPawn))
+            var data = selPawnForSocialInfo.relations.GetAdditionalPregnancyApproachData();
+            if (data.pawnsWithPsychicConception.Contains(entry.otherPawn))
             {
                 return PregnancyApproachUtils.PregnancyApproachIcon_PsychicConception.Texture;
+            }
+            else if (data.pawnsWithLovinForPleasure.Contains(entry.otherPawn))
+            {
+                return PregnancyApproachUtils.PregnancyApproachIcon_LovinForPleasure.Texture;
             }
             return texture;
         }
 
         public static void AddPregnancyApproachOption(CachedSocialTabEntry entry, Pawn selPawnForSocialInfo, List<FloatMenuOption> list)
         {
-            list.Add(new FloatMenuOption("VRE_PsychicConceptionDesc".Translate(), delegate
+            if (selPawnForSocialInfo.genes.HasGene(InternalDefOf.PsychicBonding))
             {
-                selPawnForSocialInfo.relations.GetAdditionalPregnancyApproachData().SetPsychicConceptionApproach(entry.otherPawn);
-                entry.otherPawn.relations.GetAdditionalPregnancyApproachData().SetPsychicConceptionApproach(selPawnForSocialInfo);
-            }, PregnancyApproachUtils.PregnancyApproachIcon_PsychicConception.Texture, Color.white));
+                list.Add(new FloatMenuOption("VRE_PsychicConceptionDesc".Translate(), delegate
+                {
+                    selPawnForSocialInfo.relations.GetAdditionalPregnancyApproachData().pawnsWithPsychicConception.Add(entry.otherPawn);
+                    selPawnForSocialInfo.relations.GetAdditionalPregnancyApproachData().pawnsWithLovinForPleasure.Remove(entry.otherPawn);
+                    entry.otherPawn.relations.GetAdditionalPregnancyApproachData().pawnsWithPsychicConception.Add(selPawnForSocialInfo);
+                    entry.otherPawn.relations.GetAdditionalPregnancyApproachData().pawnsWithLovinForPleasure.Remove(selPawnForSocialInfo);
+                }, PregnancyApproachUtils.PregnancyApproachIcon_PsychicConception.Texture, Color.white));
+            }
+            if (selPawnForSocialInfo.genes.HasGene(InternalDefOf.VRE_Libido_VeryHigh))
+            {
+                list.Add(new FloatMenuOption("VRE_LovinForPleasureDesc".Translate(), delegate
+                {
+                    selPawnForSocialInfo.relations.GetAdditionalPregnancyApproachData().pawnsWithLovinForPleasure.Add(entry.otherPawn);
+                    selPawnForSocialInfo.relations.GetAdditionalPregnancyApproachData().pawnsWithPsychicConception.Remove(entry.otherPawn);
+                    entry.otherPawn.relations.GetAdditionalPregnancyApproachData().pawnsWithLovinForPleasure.Add(selPawnForSocialInfo);
+                    entry.otherPawn.relations.GetAdditionalPregnancyApproachData().pawnsWithPsychicConception.Remove(selPawnForSocialInfo);
+                }, PregnancyApproachUtils.PregnancyApproachIcon_LovinForPleasure.Texture, Color.white));
+            }
         }
     }
 }

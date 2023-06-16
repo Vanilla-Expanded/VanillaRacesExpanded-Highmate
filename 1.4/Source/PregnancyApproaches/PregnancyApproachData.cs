@@ -5,21 +5,16 @@ namespace VanillaRacesExpandedHighmate
 {
     public class PregnancyApproachData : IExposable
     {
-        public List<Pawn> pawnsWithPsychicConception = new();
-        public void SetPsychicConceptionApproach(Pawn partner)
-        {
-            pawnsWithPsychicConception.Add(partner);
-        }
-        public void RemovePsychicConceptionApproach(Pawn partner)
-        {
-            pawnsWithPsychicConception.Remove(partner);
-        }
+        public HashSet<Pawn> pawnsWithPsychicConception = new();
+        public HashSet<Pawn> pawnsWithLovinForPleasure = new();
         public void ExposeData()
         {
             Scribe_Collections.Look(ref pawnsWithPsychicConception, "pawnsWithPsychicConception", LookMode.Reference);
+            Scribe_Collections.Look(ref pawnsWithLovinForPleasure, "pawnsWithLovinForPleasure", LookMode.Reference);
             if (Scribe.mode == LoadSaveMode.PostLoadInit)
             {
-                pawnsWithPsychicConception ??= new List<Pawn>();
+                pawnsWithPsychicConception ??= new HashSet<Pawn>();
+                pawnsWithLovinForPleasure ??= new HashSet<Pawn>();
             }
         }
     }
