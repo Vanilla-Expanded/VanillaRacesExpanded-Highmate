@@ -128,10 +128,19 @@ namespace VanillaRacesExpandedHighmate
         }
         public static Texture2D InterceptTexture(Texture2D texture, CachedSocialTabEntry entry, Pawn selPawnForSocialInfo)
         {
-            if (PawnsHavePsychicBondingAndDifferentGender(entry, selPawnForSocialInfo) || selPawnForSocialInfo.genes.HasGene(InternalDefOf.VRE_Libido_VeryHigh)
-                || entry.otherPawn.genes.HasGene(InternalDefOf.VRE_Libido_VeryHigh))
+            var pawn = selPawnForSocialInfo;
+            var pawn2 = entry.otherPawn;
+            bool flag = pawn.GetStatValue(StatDefOf.Fertility) <= 0f;
+            bool flag2 = pawn2.GetStatValue(StatDefOf.Fertility) <= 0f;
+            bool flag5 = pawn2.Sterile() && PregnancyUtility.GetPregnancyHediff(pawn2) == null;
+            bool flag6 = pawn.Sterile();
+            if (flag && flag2 || flag != flag2 || flag6 && flag5 || flag6 != flag5)
             {
-                GUI.color = Color.white;
+                if (PawnsHavePsychicBondingAndDifferentGender(entry, selPawnForSocialInfo) || selPawnForSocialInfo.genes.HasGene(InternalDefOf.VRE_Libido_VeryHigh)
+                    || entry.otherPawn.genes.HasGene(InternalDefOf.VRE_Libido_VeryHigh))
+                {
+                    GUI.color = Color.white;
+                }
             }
             var data = selPawnForSocialInfo.relations.GetAdditionalPregnancyApproachData();
             if (data.pawnsWithPsychicConception.Contains(entry.otherPawn))
