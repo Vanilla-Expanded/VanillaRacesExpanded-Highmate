@@ -18,6 +18,7 @@ namespace VanillaRacesExpandedHighmate
             var get_WindowStackInfo = AccessTools.PropertyGetter(typeof(Find), "WindowStack");
             var drawTextureInfo = AccessTools.Method(typeof(GUI), "DrawTexture", new Type[] { typeof(Rect), typeof(Texture) });
             var tooltipHandlerTipRegionInfo = AccessTools.Method(typeof(TooltipHandler), "TipRegion", new Type[] {typeof(Rect), typeof(TipSignal)});
+            var messageInfo = AccessTools.Method(typeof(Messages), "Message", new Type[] { typeof(string), typeof(LookTargets), typeof(MessageTypeDef), typeof(bool) });
             var codes = codeInstructions.ToList();
             for (var i =  0; i < codes.Count; i++)
             {
@@ -37,7 +38,17 @@ namespace VanillaRacesExpandedHighmate
                     yield return new CodeInstruction(OpCodes.Call,
                         AccessTools.Method(typeof(SocialCardUtility_DrawPregnancyApproach_Patch), "InterceptTooltip"));
                 }
-                yield return new CodeInstruction(code);
+                if (code.Calls(messageInfo))
+                {
+                    yield return new CodeInstruction(OpCodes.Ldarg_2);
+                    yield return new CodeInstruction(OpCodes.Ldarg_0);
+                    yield return new CodeInstruction(OpCodes.Call,
+                        AccessTools.Method(typeof(SocialCardUtility_DrawPregnancyApproach_Patch), "InterceptMessage"));
+                }
+                else
+                {
+                    yield return new CodeInstruction(code);
+                }
                 if (code.Calls(get_WindowStackInfo) && codes[i + 1].opcode == OpCodes.Ldloc_3)
                 {
                     yield return new CodeInstruction(OpCodes.Ldarg_0);
@@ -46,6 +57,54 @@ namespace VanillaRacesExpandedHighmate
                     yield return new CodeInstruction(OpCodes.Call,
                         AccessTools.Method(typeof(SocialCardUtility_DrawPregnancyApproach_Patch), "AddPregnancyApproachOption"));
                 }
+            }
+        }
+
+        public static void InterceptMessage(string message, LookTargets targets, MessageTypeDef messageTypeDef, bool historical, Pawn selPawnForSocialInfo, CachedSocialTabEntry entry)
+        {
+            var pawn = selPawnForSocialInfo;
+            var pawn2 = entry.otherPawn;
+            bool flag = pawn.GetStatValue(StatDefOf.Fertility) <= 0f;
+            bool flag2 = pawn2.GetStatValue(StatDefOf.Fertility) <= 0f;
+            bool flag5 = pawn2.Sterile() && PregnancyUtility.GetPregnancyHediff(pawn2) == null;
+            bool flag6 = pawn.Sterile();
+            if (flag && flag2 || flag != flag2 || flag6 && flag5 || flag6 != flag5)
+            {
+                if (PawnsHavePsychicBondingAndDifferentGender(entry, selPawnForSocialInfo) || selPawnForSocialInfo.genes.HasGene(InternalDefOf.VRE_Libido_VeryHigh)
+        || entry.otherPawn.genes.HasGene(InternalDefOf.VRE_Libido_VeryHigh))
+                {
+                    List<FloatMenuOption> list = new List<FloatMenuOption>();
+                    if (PawnsHavePsychicBondingAndDifferentGender(entry, selPawnForSocialInfo))
+                    {
+                        list.Add(new FloatMenuOption("VRE_PsychicConceptionDesc".Translate(), delegate
+                        {
+                            selPawnForSocialInfo.relations.GetAdditionalPregnancyApproachData().pawnsWithPsychicConception.Add(entry.otherPawn);
+                            selPawnForSocialInfo.relations.GetAdditionalPregnancyApproachData().pawnsWithLovinForPleasure.Remove(entry.otherPawn);
+                            entry.otherPawn.relations.GetAdditionalPregnancyApproachData().pawnsWithPsychicConception.Add(selPawnForSocialInfo);
+                            entry.otherPawn.relations.GetAdditionalPregnancyApproachData().pawnsWithLovinForPleasure.Remove(selPawnForSocialInfo);
+                        }, PregnancyApproachUtils.PregnancyApproachIcon_PsychicConception.Texture, Color.white));
+                    }
+                    if (selPawnForSocialInfo.genes.HasGene(InternalDefOf.VRE_Libido_VeryHigh)
+                        || entry.otherPawn.genes.HasGene(InternalDefOf.VRE_Libido_VeryHigh))
+                    {
+                        list.Add(new FloatMenuOption("VRE_LovinForPleasureDesc".Translate(), delegate
+                        {
+                            selPawnForSocialInfo.relations.GetAdditionalPregnancyApproachData().pawnsWithLovinForPleasure.Add(entry.otherPawn);
+                            selPawnForSocialInfo.relations.GetAdditionalPregnancyApproachData().pawnsWithPsychicConception.Remove(entry.otherPawn);
+                            entry.otherPawn.relations.GetAdditionalPregnancyApproachData().pawnsWithLovinForPleasure.Add(selPawnForSocialInfo);
+                            entry.otherPawn.relations.GetAdditionalPregnancyApproachData().pawnsWithPsychicConception.Remove(selPawnForSocialInfo);
+                        }, PregnancyApproachUtils.PregnancyApproachIcon_LovinForPleasure.Texture, Color.white));
+                    }
+                    Find.WindowStack.Add(new FloatMenu(list));
+                }
+                else
+                {
+                    Messages.Message(message, targets, messageTypeDef, historical: historical);
+                }
+            }
+            else
+            {
+                Messages.Message(message, targets, messageTypeDef, historical: historical);
             }
         }
         public static TipSignal InterceptTooltip(TipSignal tipSignal, CachedSocialTabEntry entry, Pawn selPawnForSocialInfo, AcceptanceReport acceptanceReport)
@@ -69,6 +128,11 @@ namespace VanillaRacesExpandedHighmate
         }
         public static Texture2D InterceptTexture(Texture2D texture, CachedSocialTabEntry entry, Pawn selPawnForSocialInfo)
         {
+            if (PawnsHavePsychicBondingAndDifferentGender(entry, selPawnForSocialInfo) || selPawnForSocialInfo.genes.HasGene(InternalDefOf.VRE_Libido_VeryHigh)
+                || entry.otherPawn.genes.HasGene(InternalDefOf.VRE_Libido_VeryHigh))
+            {
+                GUI.color = Color.white;
+            }
             var data = selPawnForSocialInfo.relations.GetAdditionalPregnancyApproachData();
             if (data.pawnsWithPsychicConception.Contains(entry.otherPawn))
             {
@@ -83,7 +147,7 @@ namespace VanillaRacesExpandedHighmate
 
         public static void AddPregnancyApproachOption(CachedSocialTabEntry entry, Pawn selPawnForSocialInfo, List<FloatMenuOption> list)
         {
-            if (selPawnForSocialInfo.genes.HasGene(InternalDefOf.PsychicBonding))
+            if (PawnsHavePsychicBondingAndDifferentGender(entry, selPawnForSocialInfo))
             {
                 list.Add(new FloatMenuOption("VRE_PsychicConceptionDesc".Translate(), delegate
                 {
@@ -93,7 +157,8 @@ namespace VanillaRacesExpandedHighmate
                     entry.otherPawn.relations.GetAdditionalPregnancyApproachData().pawnsWithLovinForPleasure.Remove(selPawnForSocialInfo);
                 }, PregnancyApproachUtils.PregnancyApproachIcon_PsychicConception.Texture, Color.white));
             }
-            if (selPawnForSocialInfo.genes.HasGene(InternalDefOf.VRE_Libido_VeryHigh))
+            if (selPawnForSocialInfo.genes.HasGene(InternalDefOf.VRE_Libido_VeryHigh)
+                || entry.otherPawn.genes.HasGene(InternalDefOf.VRE_Libido_VeryHigh))
             {
                 list.Add(new FloatMenuOption("VRE_LovinForPleasureDesc".Translate(), delegate
                 {
@@ -103,6 +168,16 @@ namespace VanillaRacesExpandedHighmate
                     entry.otherPawn.relations.GetAdditionalPregnancyApproachData().pawnsWithPsychicConception.Remove(selPawnForSocialInfo);
                 }, PregnancyApproachUtils.PregnancyApproachIcon_LovinForPleasure.Texture, Color.white));
             }
+        }
+
+        public static bool PawnsHavePsychicBondingAndDifferentGender(CachedSocialTabEntry entry, Pawn selPawnForSocialInfo)
+        {
+            if (entry.otherPawn.gender != selPawnForSocialInfo.gender)
+            {
+                return selPawnForSocialInfo.genes.HasGene(InternalDefOf.PsychicBonding)
+                || entry.otherPawn.genes.HasGene(InternalDefOf.PsychicBonding);
+            }
+            return false;
         }
     }
 }
