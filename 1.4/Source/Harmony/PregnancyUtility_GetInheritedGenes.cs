@@ -14,7 +14,7 @@ namespace VanillaRacesExpandedHighmate
 
     [HarmonyPatch(typeof(PregnancyUtility))]
     [HarmonyPatch("GetInheritedGenes")]
-    [HarmonyPatch(new Type[] { typeof(Pawn), typeof(Pawn) })]
+    [HarmonyPatch(new Type[] { typeof(Pawn), typeof(Pawn),typeof(bool) }, new ArgumentType[] {ArgumentType.Normal,ArgumentType.Normal,ArgumentType.Ref})]
     public static class VanillaRacesExpandedHighmate_PregnancyUtility_GetInheritedGenes_Patch
     {
 
@@ -23,6 +23,8 @@ namespace VanillaRacesExpandedHighmate
         [HarmonyPostfix]
         static void CalculateDominance(Pawn father, Pawn mother, ref List<GeneDef> __result )
         {
+
+        
             bool flagFather = father?.genes?.HasGene(InternalDefOf.VRE_DominantGenome) == true;
             bool flagMother = mother?.genes?.HasGene(InternalDefOf.VRE_DominantGenome) == true;
 

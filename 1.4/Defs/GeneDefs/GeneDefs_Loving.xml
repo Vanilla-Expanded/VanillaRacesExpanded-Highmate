@@ -10,6 +10,8 @@
 		<iconPath>UI/Icons/Genes/Gene_VeryHighLibido</iconPath>
 		<displayOrderInCategory>10.1</displayOrderInCategory>
 		<lovinMTBFactor>0.25</lovinMTBFactor>
+		<biostatMet>-2</biostatMet>
+		<biostatCpx>1</biostatCpx>
 		<abilities>
 			<li>VRE_InitiateLovin</li>
 		</abilities>
@@ -26,5 +28,11 @@
 		<biostatCpx>1</biostatCpx>
 		<displayCategory>Reproduction</displayCategory>
 		<causesNeed>VRE_Lovin</causesNeed>
+		<modExtensions>
+			<li Class="VanillaGenesExpanded.GeneExtension">
+				
+				<hediffToWholeBody>VRE_LovinDependencyHediff</hediffToWholeBody>
+			</li>
+		</modExtensions>
 	</GeneDef>
 </Defs>

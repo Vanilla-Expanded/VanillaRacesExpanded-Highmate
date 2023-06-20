@@ -26,10 +26,12 @@ namespace VanillaRacesExpandedHighmate
             base.Apply(target, dest);
             Pawn pawn = target.Pawn;
             if (pawn != null)
-            {               
-
-                Job job = JobMaker.MakeJob(InternalDefOf.VRE_InitiateLovin, pawn);
-                parent.pawn.jobs.StartJob(job, JobCondition.InterruptForced);           
+            {
+                if (pawn.CurJob.def != InternalDefOf.VRE_InitiateLovin) {
+                    Job job = JobMaker.MakeJob(InternalDefOf.VRE_InitiateLovin, pawn);
+                    parent.pawn.jobs.StartJob(job, JobCondition.InterruptForced);
+                }
+                         
 
             }
 
@@ -108,7 +110,7 @@ namespace VanillaRacesExpandedHighmate
             {
                 if (throwMessages)
                 {
-                    Messages.Message("VRE_CantUseLovinWithTrait".Translate(parent.pawn.LabelShortCap, pawn.LabelShortCap, TraitDefOf.Asexual.LabelCap), pawn, MessageTypeDefOf.RejectInput, historical: false);
+                    Messages.Message("VRE_CantUseLovinWithTraitAsexual".Translate(parent.pawn.LabelShortCap, pawn.LabelShortCap), pawn, MessageTypeDefOf.RejectInput, historical: false);
                 }
                 return false;
 
@@ -117,7 +119,7 @@ namespace VanillaRacesExpandedHighmate
             {
                 if (throwMessages)
                 {
-                    Messages.Message("VRE_CantUseLovinWithTrait".Translate(parent.pawn.LabelShortCap, pawn.LabelShortCap, InternalDefOf.VTE_Prude.LabelCap), pawn, MessageTypeDefOf.RejectInput, historical: false);
+                    Messages.Message("VRE_CantUseLovinWithTraitPrude".Translate(parent.pawn.LabelShortCap, pawn.LabelShortCap), pawn, MessageTypeDefOf.RejectInput, historical: false);
                 }
                 return false;
 
@@ -183,7 +185,9 @@ namespace VanillaRacesExpandedHighmate
             {
                 if (relationDefs.Contains(directRelations[i].def))
                 {
-                    if (!directRelations[i].otherPawn.Dead) { tmpSpouses.Add(directRelations[i].otherPawn); }
+                    if (!directRelations[i].otherPawn.Dead && directRelations[i].otherPawn!=pawn) { 
+                        tmpSpouses.Add(directRelations[i].otherPawn); 
+                    }
                     
                 }
             }

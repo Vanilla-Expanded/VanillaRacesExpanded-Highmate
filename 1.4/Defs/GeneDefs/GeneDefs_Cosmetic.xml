@@ -9,7 +9,7 @@
 			<colorType>Skin</colorType>
 		</graphicData>
 		<iconPath>UI/Icons/Genes/Gene_FelineEars</iconPath>
-		<marketValueFactor>1.05</marketValueFactor>
+		
 		<biostatMet>0</biostatMet>
 		<biostatCpx>0</biostatCpx>
 	</GeneDef>
@@ -39,7 +39,7 @@
 			<li>Bodies</li>
 			<li>Body</li>
 		</exclusionTags>
-		
+		<marketValueFactor>1.05</marketValueFactor>
 		<biostatCpx>1</biostatCpx>
 		<biostatMet>-1</biostatMet>
 		

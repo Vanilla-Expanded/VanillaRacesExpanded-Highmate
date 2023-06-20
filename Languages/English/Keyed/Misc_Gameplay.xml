@@ -2,7 +2,7 @@
 <LanguageData>
 
 
-	<VRE_EnableCatHighmates>Enable "Cat genes" on Highmates</VRE_EnableCatHighmates>
+	<VRE_EnableCatHighmates>Enable "Cat genes" on Highmates (requires game restart)</VRE_EnableCatHighmates>
 	<VRE_EnableCatHighmatesDescription>Disabling this toggle will make newly created Highmates appear without the Feline ears and Feline tail genes. Bear in mind this will have no effect on already existing Highmates. Will require a game reload.</VRE_EnableCatHighmatesDescription>
 	<VRE_NotEnoughLovin>Demands lovin'</VRE_NotEnoughLovin>
 	<VRE_LovinNeed>Lovin' need</VRE_LovinNeed>
@@ -12,7 +12,8 @@
 	<VRE_CantUseLovinLowOpinion>{0} cannot initiate lovin’ with {1} as {1} has too low opinion of {0} (Opinion of {0}: {2})</VRE_CantUseLovinLowOpinion>
 	<VRE_TooYoungForLovin>{0} cannot initiate lovin’ with {1} as {1} is too young.</VRE_TooYoungForLovin>
 	<VRE_TooYoungForLovinCaster>{0} cannot initiate lovin’ with {1} as {0} is too young.</VRE_TooYoungForLovinCaster>
-	<VRE_CantUseLovinWithTrait>{0} cannot initiate lovin’ with {1} as {1} has {2}.</VRE_CantUseLovinWithTrait>
+	<VRE_CantUseLovinWithTraitAsexual>{0} cannot initiate lovin’ with {1} as {1} is Asexual.</VRE_CantUseLovinWithTraitAsexual>
+	<VRE_CantUseLovinWithTraitPrude>{0} cannot initiate lovin’ with {1} as {1} is a Prude.</VRE_CantUseLovinWithTraitPrude>
 	<VRE_RelationshipWillBreak>{0} will initiate lovin’ with {1}, despite being in a relationship with {2}. This will result in a break up.</VRE_RelationshipWillBreak>
 	<VRE_RelationshipWillBreakTarget>{0} will initiate lovin’ with {1}, despite {1} being in a relationship with {2}. This will result in a break up.</VRE_RelationshipWillBreakTarget>
 	<VRE_CantUseOnFamily>{0} can't initiate lovin’ with {1}, as they are blood relatives.</VRE_CantUseOnFamily>
