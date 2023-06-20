@@ -19,4 +19,6 @@
 	<VRE_CantUseOnFamily>{0} can't initiate lovin’ with {1}, as they are blood relatives.</VRE_CantUseOnFamily>
 	<VRE_PsychicConceptionDesc>Psychic conception (pregnancy guaranteed)</VRE_PsychicConceptionDesc>
 	<VRE_LovinForPleasureDesc>Lovin’ for pleasure (pregnancy chance x0%)</VRE_LovinForPleasureDesc>
+	<VRE_NoPsychicConceptionDesc>No psychic conception</VRE_NoPsychicConceptionDesc>
+	<VRE_NoLovinForPleasureDesc>Normal lovin'</VRE_NoLovinForPleasureDesc>
 </LanguageData>

@@ -156,6 +156,8 @@ namespace VanillaRacesExpandedHighmate
 
         public static void AddPregnancyApproachOption(CachedSocialTabEntry entry, Pawn selPawnForSocialInfo, List<FloatMenuOption> list)
         {
+            var data = selPawnForSocialInfo.relations.GetAdditionalPregnancyApproachData();
+
             if (PawnsHavePsychicBondingAndDifferentGender(entry, selPawnForSocialInfo))
             {
                 list.Add(new FloatMenuOption("VRE_PsychicConceptionDesc".Translate(), delegate
@@ -176,6 +178,22 @@ namespace VanillaRacesExpandedHighmate
                     entry.otherPawn.relations.GetAdditionalPregnancyApproachData().pawnsWithLovinForPleasure.Add(selPawnForSocialInfo);
                     entry.otherPawn.relations.GetAdditionalPregnancyApproachData().pawnsWithPsychicConception.Remove(selPawnForSocialInfo);
                 }, PregnancyApproachUtils.PregnancyApproachIcon_LovinForPleasure.Texture, Color.white));
+            }
+            if (data.pawnsWithPsychicConception.Contains(entry.otherPawn))
+            {
+                list.Add(new FloatMenuOption("VRE_NoPsychicConceptionDesc".Translate(), delegate
+                {
+                    selPawnForSocialInfo.relations.GetAdditionalPregnancyApproachData().pawnsWithPsychicConception.Remove(entry.otherPawn);
+                    entry.otherPawn.relations.GetAdditionalPregnancyApproachData().pawnsWithPsychicConception.Remove(selPawnForSocialInfo);
+                }, PregnancyApproachUtils.PregnancyApproachIcon_PsychicConception.Texture, Color.white));
+            }
+            if (data.pawnsWithLovinForPleasure.Contains(entry.otherPawn))
+            {
+                list.Add(new FloatMenuOption("VRE_NoLovinForPleasureDesc".Translate(), delegate
+                {
+                    selPawnForSocialInfo.relations.GetAdditionalPregnancyApproachData().pawnsWithLovinForPleasure.Remove(entry.otherPawn);
+                    entry.otherPawn.relations.GetAdditionalPregnancyApproachData().pawnsWithLovinForPleasure.Remove(selPawnForSocialInfo);
+                }, PregnancyApproachUtils.PregnancyApproachIcon_PsychicConception.Texture, Color.white));
             }
         }
 
