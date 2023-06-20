@@ -74,27 +74,7 @@ namespace VanillaRacesExpandedHighmate
         || entry.otherPawn.genes.HasGene(InternalDefOf.VRE_Libido_VeryHigh))
                 {
                     List<FloatMenuOption> list = new List<FloatMenuOption>();
-                    if (PawnsHavePsychicBondingAndDifferentGender(entry, selPawnForSocialInfo))
-                    {
-                        list.Add(new FloatMenuOption("VRE_PsychicConceptionDesc".Translate(), delegate
-                        {
-                            selPawnForSocialInfo.relations.GetAdditionalPregnancyApproachData().pawnsWithPsychicConception.Add(entry.otherPawn);
-                            selPawnForSocialInfo.relations.GetAdditionalPregnancyApproachData().pawnsWithLovinForPleasure.Remove(entry.otherPawn);
-                            entry.otherPawn.relations.GetAdditionalPregnancyApproachData().pawnsWithPsychicConception.Add(selPawnForSocialInfo);
-                            entry.otherPawn.relations.GetAdditionalPregnancyApproachData().pawnsWithLovinForPleasure.Remove(selPawnForSocialInfo);
-                        }, PregnancyApproachUtils.PregnancyApproachIcon_PsychicConception.Texture, Color.white));
-                    }
-                    if (selPawnForSocialInfo.genes.HasGene(InternalDefOf.VRE_Libido_VeryHigh)
-                        || entry.otherPawn.genes.HasGene(InternalDefOf.VRE_Libido_VeryHigh))
-                    {
-                        list.Add(new FloatMenuOption("VRE_LovinForPleasureDesc".Translate(), delegate
-                        {
-                            selPawnForSocialInfo.relations.GetAdditionalPregnancyApproachData().pawnsWithLovinForPleasure.Add(entry.otherPawn);
-                            selPawnForSocialInfo.relations.GetAdditionalPregnancyApproachData().pawnsWithPsychicConception.Remove(entry.otherPawn);
-                            entry.otherPawn.relations.GetAdditionalPregnancyApproachData().pawnsWithLovinForPleasure.Add(selPawnForSocialInfo);
-                            entry.otherPawn.relations.GetAdditionalPregnancyApproachData().pawnsWithPsychicConception.Remove(selPawnForSocialInfo);
-                        }, PregnancyApproachUtils.PregnancyApproachIcon_LovinForPleasure.Texture, Color.white));
-                    }
+                    AddPregnancyApproachOption(entry, selPawnForSocialInfo, list);
                     Find.WindowStack.Add(new FloatMenu(list));
                 }
                 else
@@ -157,7 +137,6 @@ namespace VanillaRacesExpandedHighmate
         public static void AddPregnancyApproachOption(CachedSocialTabEntry entry, Pawn selPawnForSocialInfo, List<FloatMenuOption> list)
         {
             var data = selPawnForSocialInfo.relations.GetAdditionalPregnancyApproachData();
-
             if (PawnsHavePsychicBondingAndDifferentGender(entry, selPawnForSocialInfo))
             {
                 list.Add(new FloatMenuOption("VRE_PsychicConceptionDesc".Translate(), delegate
@@ -179,13 +158,14 @@ namespace VanillaRacesExpandedHighmate
                     entry.otherPawn.relations.GetAdditionalPregnancyApproachData().pawnsWithPsychicConception.Remove(selPawnForSocialInfo);
                 }, PregnancyApproachUtils.PregnancyApproachIcon_LovinForPleasure.Texture, Color.white));
             }
+
             if (data.pawnsWithPsychicConception.Contains(entry.otherPawn))
             {
                 list.Add(new FloatMenuOption("VRE_NoPsychicConceptionDesc".Translate(), delegate
                 {
                     selPawnForSocialInfo.relations.GetAdditionalPregnancyApproachData().pawnsWithPsychicConception.Remove(entry.otherPawn);
                     entry.otherPawn.relations.GetAdditionalPregnancyApproachData().pawnsWithPsychicConception.Remove(selPawnForSocialInfo);
-                }, PregnancyApproachUtils.PregnancyApproachIcon_PsychicConception.Texture, Color.white));
+                }, PregnancyUtility.PregnancyApproachIcon_AvoidPregnancy.Texture, Color.white));
             }
             if (data.pawnsWithLovinForPleasure.Contains(entry.otherPawn))
             {
@@ -193,7 +173,7 @@ namespace VanillaRacesExpandedHighmate
                 {
                     selPawnForSocialInfo.relations.GetAdditionalPregnancyApproachData().pawnsWithLovinForPleasure.Remove(entry.otherPawn);
                     entry.otherPawn.relations.GetAdditionalPregnancyApproachData().pawnsWithLovinForPleasure.Remove(selPawnForSocialInfo);
-                }, PregnancyApproachUtils.PregnancyApproachIcon_PsychicConception.Texture, Color.white));
+                }, PregnancyUtility.PregnancyApproachIcon_AvoidPregnancy.Texture, Color.white));
             }
         }
 
