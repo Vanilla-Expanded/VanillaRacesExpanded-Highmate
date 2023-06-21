@@ -69,7 +69,7 @@ namespace VanillaRacesExpandedHighmate
 			if (!this.IsFrozen)
 			{
 
-				CurLevel -= 1.38888E-05f;
+				CurLevel -= 8.33E-05f;
 
 				if(CurLevel < 0.01f)
                 {

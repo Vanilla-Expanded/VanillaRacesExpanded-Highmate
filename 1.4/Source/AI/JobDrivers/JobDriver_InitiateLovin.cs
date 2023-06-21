@@ -136,20 +136,25 @@ namespace VanillaRacesExpandedHighmate
                 PortraitsCache.SetDirty(pawn);
                 GlobalTextureAtlasManager.TryMarkPawnFrameSetDirty(pawn);
 
+                Need_Lovin need = pawn?.needs?.TryGetNeed<Need_Lovin>();
+                if (need != null)
+                {
+                    need.CurLevel = 1f;
+                }
 
 
                 Thought_Memory thought_Memory = (Thought_Memory)ThoughtMaker.MakeThought(ThoughtDefOf.GotSomeLovin);
-                if ((base.pawn.health != null && base.pawn.health.hediffSet != null && base.pawn.health.hediffSet.hediffs.Any((Hediff h) => h.def == HediffDefOf.LoveEnhancer)) || (Partner.health != null && Partner.health.hediffSet != null && Partner.health.hediffSet.hediffs.Any((Hediff h) => h.def == HediffDefOf.LoveEnhancer)))
+                if ((pawn.health != null && pawn.health.hediffSet != null && pawn.health.hediffSet.hediffs.Any((Hediff h) => h.def == HediffDefOf.LoveEnhancer)) || (Partner.health != null && Partner.health.hediffSet != null && Partner.health.hediffSet.hediffs.Any((Hediff h) => h.def == HediffDefOf.LoveEnhancer)))
                 {
                     thought_Memory.moodPowerFactor = 1.5f;
                 }
-                if (base.pawn.needs.mood != null)
+                if (pawn.needs.mood != null)
                 {
-                    base.pawn.needs.mood.thoughts.memories.TryGainMemory(thought_Memory, Partner);
+                    pawn.needs.mood.thoughts.memories.TryGainMemory(thought_Memory, Partner);
                 }
-                Find.HistoryEventsManager.RecordEvent(new HistoryEvent(HistoryEventDefOf.GotLovin, base.pawn.Named(HistoryEventArgsNames.Doer)));
-                HistoryEventDef def = (base.pawn.relations.DirectRelationExists(PawnRelationDefOf.Spouse, Partner) ? HistoryEventDefOf.GotLovin_Spouse : HistoryEventDefOf.GotLovin_NonSpouse);
-                Find.HistoryEventsManager.RecordEvent(new HistoryEvent(def, base.pawn.Named(HistoryEventArgsNames.Doer)));
+                Find.HistoryEventsManager.RecordEvent(new HistoryEvent(HistoryEventDefOf.GotLovin, pawn.Named(HistoryEventArgsNames.Doer)));
+                HistoryEventDef def = (pawn.relations.DirectRelationExists(PawnRelationDefOf.Spouse, Partner) ? HistoryEventDefOf.GotLovin_Spouse : HistoryEventDefOf.GotLovin_NonSpouse);
+                Find.HistoryEventsManager.RecordEvent(new HistoryEvent(def, pawn.Named(HistoryEventArgsNames.Doer)));
                 if (ModsConfig.BiotechActive)
                 {
                     Pawn pawn = ((base.pawn.gender == Gender.Male) ? base.pawn : ((Partner.gender == Gender.Male) ? Partner : null));
