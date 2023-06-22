@@ -30,7 +30,7 @@
 		<stages>
 			<li>
 				<label>what a perfect body</label>
-				<baseOpinionOffset>5</baseOpinionOffset>
+				<baseOpinionOffset>10</baseOpinionOffset>
 			</li>
 		</stages>
 	</ThoughtDef>
