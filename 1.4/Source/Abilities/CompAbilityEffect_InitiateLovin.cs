@@ -115,7 +115,7 @@ namespace VanillaRacesExpandedHighmate
                 return false;
 
             }
-            if (pawn.story?.traits?.HasTrait(InternalDefOf.VTE_Prude) == true)
+            if (InternalDefOf.VTE_Prude!=null&&pawn.story?.traits?.HasTrait(InternalDefOf.VTE_Prude) == true)
             {
                 if (throwMessages)
                 {
