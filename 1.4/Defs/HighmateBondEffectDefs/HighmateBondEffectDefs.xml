@@ -5,102 +5,102 @@
 		<defName>VRE_HighmateBondEffectDefs</defName>
 		<bondHediffTraits>
 			<li>
-				<traitRequirement>      
-					<def>Bloodlust</def>
-				</traitRequirement>
+				<traitRequirements>
+					<li>
+						<def>Bloodlust</def>
+					</li>
+					<li>
+						<def>Psychopath</def>
+					</li>
+				</traitRequirements>
 				<hediff>VRE_PsychicBondBloodlust</hediff>
 			</li>
 			<li>
-				<traitRequirement>      
-					<def>Psychopath</def>
-				</traitRequirement>
-				<hediff>VRE_PsychicBondPsychopath</hediff>
-			</li>
-			<li>
-				<traitRequirement>      
-					<def>FastLearner</def>
-				</traitRequirement>
+				<traitRequirements>    
+					<li>
+						<def>FastLearner</def>
+					</li>
+					<li>
+						<def>TooSmart</def>
+					</li>
+				</traitRequirements>
 				<hediff>VRE_PsychicBondFastLearner</hediff>
 			</li>
 			<li>
-				<traitRequirement>      
-					<def>TooSmart</def>
-				</traitRequirement>
-				<hediff>VRE_PsychicBondTooSmart</hediff>
-			</li>
-			<li>
-				<traitRequirement>      
-					<def>Industriousness</def>
-					<degree>2</degree>
-				</traitRequirement>
+				<traitRequirements>    
+					<li>
+						<def>Industriousness</def>
+						<degree>2</degree>
+					</li>
+					<li>
+						<def>Industriousness</def>
+						<degree>1</degree>
+					</li>
+				</traitRequirements>
 				<hediff>VRE_PsychicBondIndustrious</hediff>
 			</li>
 			<li>
-				<traitRequirement>      
-					<def>Industriousness</def>
-					<degree>1</degree>
-				</traitRequirement>
-				<hediff>VRE_PsychicBondHardWorker</hediff>
-			</li>
-			<li>
-				<traitRequirement>      
-					<def>NaturalMood</def>
-					<degree>2</degree>
-				</traitRequirement>
+				<traitRequirements>
+					<li>
+						<def>NaturalMood</def>
+						<degree>2</degree>
+					</li>
+					<li>
+						<def>NaturalMood</def>
+						<degree>1</degree>
+					</li>
+				</traitRequirements>
 				<hediff>VRE_PsychicBondSanguine</hediff>
 			</li>
 			<li>
-				<traitRequirement>      
-					<def>NaturalMood</def>
-					<degree>1</degree>
-				</traitRequirement>
-				<hediff>VRE_PsychicBondOptimist</hediff>
-			</li>
-			<li>
-				<traitRequirement>      
-					<def>Nerves</def>
-					<degree>2</degree>
-				</traitRequirement>
+				<traitRequirements>
+					<li>
+						<def>Nerves</def>
+						<degree>2</degree>
+					</li>
+					<li>
+						<def>Nerves</def>
+						<degree>1</degree>
+					</li>
+				</traitRequirements>
 				<hediff>VRE_PsychicBondIronWilled</hediff>
 			</li>
 			<li>
-				<traitRequirement>      
-					<def>Nerves</def>
-					<degree>1</degree>
-				</traitRequirement>
-				<hediff>VRE_PsychicBondSteadfast</hediff>
-			</li>
-			<li>
-				<traitRequirement>      
-					<def>ShootingAccuracy</def>
-					<degree>1</degree>
-				</traitRequirement>
+				<traitRequirements>    
+					<li>
+						<def>ShootingAccuracy</def>
+						<degree>1</degree>
+					</li>
+				</traitRequirements>
 				<hediff>VRE_PsychicBondCarefulShooter</hediff>
 			</li>
 			<li>
-				<traitRequirement>      
-					<def>PsychicSensitivity</def>
-					<degree>2</degree>
-				</traitRequirement>
+				<traitRequirements>
+					<li>
+						<def>PsychicSensitivity</def>
+						<degree>2</degree>
+					</li>
+					<li>
+						<def>PsychicSensitivity</def>
+						<degree>1</degree>
+					</li>
+				</traitRequirements>
 				<hediff>VRE_PsychicBondPsychicallyHypersensitive</hediff>
 			</li>
 			<li>
-				<traitRequirement>      
-					<def>PsychicSensitivity</def>
-					<degree>1</degree>
-				</traitRequirement>
-				<hediff>VRE_PsychicBondPsychicallySensitive</hediff>
-			</li>
-			<li>
-				<traitRequirement>      
-					<def>GreatMemory</def>
-				</traitRequirement>
+				<traitRequirements>
+					<li>
+						<def>GreatMemory</def>
+					</li>
+				</traitRequirements>
 				<hediff>VRE_PsychicBondGreatMemory</hediff>
 			</li>
 			<li>
-				<traitRequirement>      
-					<def>Abrasive</def>
-				</traitRequirement>
+				<traitRequirements>      
+					<li>
+						<def>Abrasive</def>
+					</li>
+				</traitRequirements>
 				<hediff>VRE_PsychicBondAbrasive</hediff>
 			</li>
 		</bondHediffTraits>

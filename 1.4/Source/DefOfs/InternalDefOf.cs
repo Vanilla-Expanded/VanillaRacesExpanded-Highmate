@@ -86,7 +86,6 @@ namespace VanillaRacesExpandedHighmate
         public static TraitDef VTE_Prude;
 
         public static HediffDef VRE_PsychicBondBloodlust;
-        public static HediffDef VRE_PsychicBondPsychopath;
         public static HediffDef VRE_PsychicBondGreatMemory;
         public static HediffDef VRE_PsychicBondAbrasive;
         public static GeneDef VRE_Libido_VeryHigh, PsychicBonding;

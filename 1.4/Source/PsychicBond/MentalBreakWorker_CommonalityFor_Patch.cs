@@ -11,8 +11,7 @@ namespace VanillaRacesExpandedHighmate
         {
             if (__instance.def.mentalState != null && __instance.def.mentalState.IsAggro)
             {
-                if (pawn.health.hediffSet.GetFirstHediffOfDef(InternalDefOf.VRE_PsychicBondPsychopath) != null
-                    || pawn.health.hediffSet.GetFirstHediffOfDef(InternalDefOf.VRE_PsychicBondBloodlust) != null)
+                if (pawn.health.hediffSet.GetFirstHediffOfDef(InternalDefOf.VRE_PsychicBondBloodlust) != null)
                 {
                     __result *= 2f;
                 }

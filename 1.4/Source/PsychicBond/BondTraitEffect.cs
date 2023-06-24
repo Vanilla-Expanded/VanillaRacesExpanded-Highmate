@@ -1,10 +1,11 @@
-﻿using Verse;
+﻿using System.Collections.Generic;
+using Verse;
 
 namespace VanillaRacesExpandedHighmate
 {
     public class BondTraitEffect
     {
-        public TraitRequirement traitRequirement;
+        public List<TraitRequirement> traitRequirements;
 
         public HediffDef hediff;
         public void Apply(Pawn pawn)
