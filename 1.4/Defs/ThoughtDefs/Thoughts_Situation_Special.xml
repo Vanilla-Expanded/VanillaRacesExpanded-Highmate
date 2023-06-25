@@ -1,31 +1,42 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
-
-
-  <ThoughtDef>
-    <defName>VRE_LovinNeedThoughts</defName>
-   
-    <workerClass>VanillaRacesExpandedHighmate.ThoughtWorker_LovinNeed</workerClass>
-    <developmentalStageFilter>Adult</developmentalStageFilter>
-	<validWhileDespawned>true</validWhileDespawned>
-    <stages>
-       <li>
-        <label>needs lovin'</label>
-        <description>I crave lovin’. Give me some of it!</description>
-        <baseMoodEffect>-10</baseMoodEffect>
-      </li>
-      <li>
-        <label>demands lovin'</label>
-        <description>If I don’t get any lovin’ right here, right now…</description>
-        <baseMoodEffect>-25</baseMoodEffect>
-      </li>
-      <li>
-        <label>demands lovin' (leaving)</label>
-        <description>If I don’t get any lovin’ right here, right now…</description>
-        <baseMoodEffect>-25</baseMoodEffect>
-      </li>
-    </stages>
-  </ThoughtDef>
-
- 
+	<ThoughtDef>
+		<defName>VRE_LovinNeedThoughts</defName>
+		<workerClass>VanillaRacesExpandedHighmate.ThoughtWorker_LovinNeed</workerClass>
+		<developmentalStageFilter>Adult</developmentalStageFilter>
+		<validWhileDespawned>true</validWhileDespawned>
+		<stages>
+			<li>
+				<label>needs lovin'</label>
+				<description>I crave lovin’. Give me some of it!</description>
+				<baseMoodEffect>-10</baseMoodEffect>
+			</li>
+			<li>
+				<label>demands lovin'</label>
+				<description>If I don’t get any lovin’ right here, right now…</description>
+				<baseMoodEffect>-25</baseMoodEffect>
+			</li>
+			<li>
+				<label>demands lovin' (leaving)</label>
+				<description>If I don’t get any lovin’ right here, right now…</description>
+				<baseMoodEffect>-25</baseMoodEffect>
+			</li>
+		</stages>
+	</ThoughtDef>
+	<ThoughtDef>
+		<defName>VRE_GotSomeLovin</defName>
+		<thoughtClass>Thought_MemorySocial</thoughtClass>
+		<durationDays>3</durationDays>
+		<stackLimit>10</stackLimit>
+		<stackedEffectMultiplier>0.6</stackedEffectMultiplier>
+		<developmentalStageFilter>Adult</developmentalStageFilter>
+		<stages>
+			<li>
+				<label>got some lovin'</label>
+				<description>There's nothing like a tumble between the sheets to lift the mood.</description>
+				<baseMoodEffect>16</baseMoodEffect>
+				<baseOpinionOffset>6</baseOpinionOffset>
+			</li>
+		</stages>
+	</ThoughtDef>
 </Defs>

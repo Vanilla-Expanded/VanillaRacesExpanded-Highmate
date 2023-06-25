@@ -21,6 +21,7 @@ namespace VanillaRacesExpandedHighmate
 
         public static ThoughtDef VRE_Flirted;
         public static ThoughtDef VRE_WhatAPerfectBody;
+        public static ThoughtDef VRE_GotSomeLovin;
 
         public static GeneDef VRE_PerfectBody;
         public static GeneDef VRE_DominantGenome;
