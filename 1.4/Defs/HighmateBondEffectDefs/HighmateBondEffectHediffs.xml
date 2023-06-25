@@ -7,8 +7,8 @@
 
 	<HediffDef ParentName="VRE_BondHediff_Base">
 		<defName>VRE_PsychicBondBloodlust</defName>
-		<label>Psychic bond (bloodlust)</label>
-		<description>text.todo</description>
+		<label>Psychic bond (Warrior)</label>
+		<description>Both psychically-bonded individuals benefit from increased melee damage at the cost of violent mental breaks.</description>
 		<stages>
 			<li>
 				<statFactors>
@@ -20,8 +20,8 @@
 
 	<HediffDef ParentName="VRE_BondHediff_Base">
 		<defName>VRE_PsychicBondFastLearner</defName>
-		<label>Psychic bond (fast learner)</label>
-		<description>text.todo</description>
+		<label>Psychic bond (Teacher)</label>
+		<description>Both psychically-bonded individuals benefit from increased skill learning speed.</description>
 		<stages>
 			<li>
 				<statOffsets>
@@ -33,8 +33,8 @@
 
 	<HediffDef ParentName="VRE_BondHediff_Base">
 		<defName>VRE_PsychicBondIndustrious</defName>
-		<label>Psychic bond (industrious)</label>
-		<description>text.todo</description>
+		<label>Psychic bond (Worker)</label>
+		<description>Both psychically-bonded individuals benefit from increased work speed.</description>
 		<stages>
 			<li>
 				<statOffsets>
@@ -46,8 +46,8 @@
 
 	<HediffDef ParentName="VRE_BondHediff_Base">
 		<defName>VRE_PsychicBondSanguine</defName>
-		<label>Psychic bond (sanguine)</label>
-		<description>text.todo</description>
+		<label>Psychic bond (Optimist)</label>
+		<description>Both psychically-bonded individuals benefit from increased happiness.</description>
 		<stages>
 			<li></li>
 		</stages>
@@ -61,8 +61,8 @@
 		<developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
 		<stages>
 			<li>
-				<label>Psychic bond (sanguine)</label>
-				<description>text.todo.</description>
+				<label>Psychic bond (Optimist)</label>
+				<description>I am happy I found the one.</description>
 				<baseMoodEffect>3</baseMoodEffect>
 			</li>
 		</stages>
@@ -71,8 +71,8 @@
 
 	<HediffDef ParentName="VRE_BondHediff_Base">
 		<defName>VRE_PsychicBondIronWilled</defName>
-		<label>Psychic bond (iron-willed)</label>
-		<description>text.todo</description>
+		<label>Psychic bond (Brave)</label>
+		<description>Both psychically-bonded individuals benefit from increased having a lower mental break threshold.</description>
 		<stages>
 			<li>
 				<statOffsets>
@@ -85,8 +85,8 @@
 	
 	<HediffDef ParentName="VRE_BondHediff_Base">
 		<defName>VRE_PsychicBondCarefulShooter</defName>
-		<label>Psychic bond (careful shooter)</label>
-		<description>text.todo</description>
+		<label>Psychic bond (Hunter)</label>
+		<description>Both psychically-bonded individuals benefit from increased ranged weapon accuracy.</description>
 		<stages>
 			<li>
 				<statOffsets>
@@ -98,8 +98,8 @@
 	
 	<HediffDef ParentName="VRE_BondHediff_Base">
 		<defName>VRE_PsychicBondPsychicallyHypersensitive</defName>
-		<label>Psychic bond (psychically hypersensitive)</label>
-		<description>text.todo</description>
+		<label>Psychic bond (Psychic)</label>
+		<description>Both psychically-bonded individuals benefit from greatly increased psychic sensitivity.</description>
 		<stages>
 			<li>
 				<statOffsets>
@@ -111,14 +111,14 @@
 	
 	<HediffDef ParentName="VRE_BondHediff_Base">
 		<defName>VRE_PsychicBondGreatMemory</defName>
-		<label>Psychic bond (great memory)</label>
-		<description>text.todo</description>
+		<label>Psychic bond (Wise)</label>
+		<description>Both psychically-bonded individuals benefit from greatly lowered skill loss rate.</description>
 	</HediffDef>
 	
 	<HediffDef ParentName="VRE_BondHediff_Base">
 		<defName>VRE_PsychicBondAbrasive</defName>
-		<label>Psychic bond (abrasive)</label>
-		<description>text.todo</description>
+		<label>Psychic bond (Abrasive)</label>
+		<description>Both psychically-bonded individuals benefit from being able to contain their abrasive words.</description>
 	</HediffDef>
 </Defs>
 
