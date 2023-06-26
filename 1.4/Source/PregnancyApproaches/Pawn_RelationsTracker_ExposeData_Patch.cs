@@ -13,17 +13,24 @@ namespace VanillaRacesExpandedHighmate
         {
             var data = __instance.GetAdditionalPregnancyApproachData();
             Scribe_Deep.Look(ref data, "VRE_additionalPregnancyApproachData");
-            pawnPregnancyApproachData[__instance] = data;
+            if (data != null)
+            {
+                pawnPregnancyApproachData[__instance] = data;
+            }
         }
         public static PregnancyApproachData GetAdditionalPregnancyApproachData(this Pawn_RelationsTracker tracker)
         {
-            if (!pawnPregnancyApproachData.TryGetValue(tracker, out var data))
+            if (tracker is not null)
             {
-                pawnPregnancyApproachData[tracker] = data = new PregnancyApproachData();
+                if (!pawnPregnancyApproachData.TryGetValue(tracker, out var data) || data is null)
+                {
+                    pawnPregnancyApproachData[tracker] = data = new PregnancyApproachData();
+                }
+                data.pawnsWithPsychicConception ??= new HashSet<Pawn>();
+                data.pawnsWithLovinForPleasure ??= new HashSet<Pawn>();
+                return data;
             }
-            data.pawnsWithPsychicConception ??= new HashSet<Pawn>();
-            data.pawnsWithLovinForPleasure ??= new HashSet<Pawn>();
-            return data;
+            throw new System.Exception("Pawn_RelationsTracker was null by some reason");
         }
     }
 }
