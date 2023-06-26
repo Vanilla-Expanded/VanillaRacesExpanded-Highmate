@@ -20,15 +20,7 @@ namespace VanillaRacesExpandedHighmate
         private const int TicksBetweenHeartMotes = 100;
 
         private static float PregnancyChance = 0.05f;
-
-        private bool jumping;
-
-        private int moveChangeInterval = 240;
-
-
-        private Pawn Partner => (Pawn)(Thing)job.GetTarget(PartnerInd);
-
-
+        private Pawn Partner => (Pawn)job.GetTarget(PartnerInd);
 
         public override void ExposeData()
         {
@@ -50,7 +42,8 @@ namespace VanillaRacesExpandedHighmate
             this.FailOnDespawnedOrNull(PartnerInd);
             this.FailOn(() => !Partner.health.capacities.CanBeAwake);
 
-
+            var gotoToil = Toils_Goto.GotoThing(PartnerInd, Partner.Position);
+            yield return gotoToil;
             Toil toil = ToilMaker.MakeToil("MakeNewToils");
             toil.initAction = delegate
             {
@@ -94,10 +87,11 @@ namespace VanillaRacesExpandedHighmate
             };
             toil.defaultCompleteMode = ToilCompleteMode.Instant;
             yield return toil;
+            yield return Toils_Jump.JumpIf(gotoToil, () => Partner.Position != pawn.Position && Partner.CurJobDef != InternalDefOf.VRE_InitiateLovin);
 
-
-
-            Toil toil2 = Toils_General.Wait(1250, TargetIndex.None).FailOnDestroyedNullOrForbidden(TargetIndex.A).WithProgressBarToilDelay(TargetIndex.A, false, -0.5f);
+            Toil toil2 = Toils_General.Wait(1250, TargetIndex.None)
+                .FailOnDestroyedNullOrForbidden(TargetIndex.A)
+                .WithProgressBarToilDelay(TargetIndex.A, false, -0.5f);
             toil2.FailOn(() => Partner.CurJob == null || Partner.CurJob.def != InternalDefOf.VRE_InitiateLovin);
 
 
@@ -113,22 +107,11 @@ namespace VanillaRacesExpandedHighmate
                     FleckMaker.ThrowMetaIcon(pawn.Position, pawn.Map, FleckDefOf.Heart);
                 }
             });
-
-            jumping = Rand.Bool;
             toil2.tickAction = delegate
             {
-                if (ticksLeft % moveChangeInterval == 0)
-                {
-                    jumping = !jumping;
-                }
-                if (ticksLeft % 125 == 0 && !jumping)
-                {
-                    pawn.Rotation = Rot4.Random;
-                }
-
+                pawn.rotationTracker.FaceTarget(Partner);
             };
             toil2.handlingFacing = true;
-
             toil2.AddFinishAction(delegate
             {
 
@@ -255,7 +238,7 @@ namespace VanillaRacesExpandedHighmate
             get
             {
                 float num = Mathf.Sin((float)ticksLeft / 60f * 8f);
-                if (jumping)
+                if (pawn.gender == Gender.Female)
                 {
                     float z = Mathf.Max(Mathf.Pow((num + 1f) * 0.5f, 2f) * 0.2f - 0.06f, 0f);
                     return new Vector3(0f, 0f, z);
