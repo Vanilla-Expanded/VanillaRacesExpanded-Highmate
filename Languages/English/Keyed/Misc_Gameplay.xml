@@ -21,4 +21,6 @@
 	<VRE_LovinForPleasureDesc>Lovin’ for pleasure (pregnancy chance x0%)</VRE_LovinForPleasureDesc>
 	<VRE_NoPsychicConceptionDesc>No psychic conception</VRE_NoPsychicConceptionDesc>
 	<VRE_NoLovinForPleasureDesc>Normal lovin'</VRE_NoLovinForPleasureDesc>
+	<VRE_AwardedHighmate>Awarded Highmate</VRE_AwardedHighmate>
+	<VRE_AwardedHighmateDesc>Due to the newly acquired Baron rank, the Empire has awarded {0} with the presence of a Highmate, who will immediately join the colony.\n\nDesigned companions and concubines with a unique ability to psychically bond with a mate, highmates are empathic, beautiful, cheerful, and talented in social matters. They are also inept at manual tasks, physically weak, and mentally incapable of violence.</VRE_AwardedHighmateDesc>
 </LanguageData>

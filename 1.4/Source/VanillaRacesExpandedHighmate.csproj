@@ -74,6 +74,7 @@
     <Compile Include="Harmony\AttackTargetFinder_NonCombatantScore.cs" />
     <Compile Include="Harmony\Gene_Notify_PawnDied.cs" />
     <Compile Include="Harmony\HarmonyInstance.cs" />
+    <Compile Include="Harmony\Pawn_RoyaltyTracker_OnPostTitleChanged.cs" />
     <Compile Include="PregnancyApproaches\JobDriver_Lovin_Patch.cs" />
     <Compile Include="PsychicBond\HediffSet_AddDirect_Patch.cs" />
     <Compile Include="Harmony\JobDriver_Lovin_GenerateRandomMinTicksToNextLovin.cs" />

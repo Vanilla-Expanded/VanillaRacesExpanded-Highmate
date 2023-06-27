@@ -19,6 +19,8 @@ namespace VanillaRacesExpandedHighmate
         public static TraitDef VRE_Flirty;
         public static TraitDef VRE_Distressed;
 
+        public static XenotypeDef Highmate;
+
         public static ThoughtDef VRE_Flirted;
         public static ThoughtDef VRE_WhatAPerfectBody;
         public static ThoughtDef VRE_GotSomeLovin;
@@ -36,6 +38,8 @@ namespace VanillaRacesExpandedHighmate
         public static RulePackDef VRE_Sentence_FlirtingAttemptAccepted;
         public static RulePackDef VRE_Sentence_FlirtingAttemptRejected;
 
+        [MayRequireRoyalty]
+        public static RoyalTitleDef Baron;
 
         public static ThoughtDef KnowGuestExecuted;
         public static ThoughtDef KnowColonistExecuted;
