@@ -15,7 +15,7 @@ namespace VanillaRacesExpandedHighmate
 
         public List<PawnRelationDef> relationDefs = new List<PawnRelationDef>() { PawnRelationDefOf.Lover,PawnRelationDefOf.Spouse,PawnRelationDefOf.Fiance};
 
-        private static List<Pawn> tmpSpouses = new List<Pawn>();
+       
 
         private const float MinAgeForLovin = 16f;
 
@@ -144,25 +144,38 @@ namespace VanillaRacesExpandedHighmate
 
         public override Window ConfirmationDialog(LocalTargetInfo target, Action confirmAction)
         {
-            Pawn pawn = target.Pawn;
-            if (pawn != null)
+            Pawn targetPawn = target.Pawn;
+            Pawn casterPawn = parent.pawn;
+
+            if (targetPawn != null)
             {
 
                if (!ModsConfig.IdeologyActive || (ModsConfig.IdeologyActive &&
-               pawn.Ideo?.HasPrecept(InternalDefOf.Lovin_FreeApproved) != true &&
-               parent.pawn.Ideo?.HasPrecept(InternalDefOf.Lovin_FreeApproved) != true))
+               targetPawn.Ideo?.HasPrecept(InternalDefOf.Lovin_FreeApproved) != true &&
+               casterPawn.Ideo?.HasPrecept(InternalDefOf.Lovin_FreeApproved) != true))
                 {
-                    List<Pawn> casterLovers = GetLovers(parent.pawn);
-                    List<Pawn> targetLovers = GetLovers(pawn);
+                    List<Pawn> casterLovers = GetLovers(casterPawn);
+                    List<Pawn> targetLovers = GetLovers(targetPawn);
 
-                    if (casterLovers.Count > 0 && !casterLovers.Contains(pawn))
-                    {
-                        return Dialog_MessageBox.CreateConfirmation("VRE_RelationshipWillBreak".Translate(parent.pawn.LabelShortCap, pawn.LabelShortCap, casterLovers.ToStringSafeEnumerable()), confirmAction, destructive: true);
-
+                    if (casterLovers.Count>0 && !casterLovers.Contains(targetPawn))
+                    {                    
+                        foreach(Pawn lover in casterLovers)
+                        {                       
+                            if (lover != targetPawn)
+                            {                              
+                                return Dialog_MessageBox.CreateConfirmation("VRE_RelationshipWillBreak".Translate(casterPawn.LabelShortCap, targetPawn.LabelShortCap, casterLovers.ToStringSafeEnumerable()), confirmAction, destructive: true);                              
+                            }
+                        }
                     }
-                    if (targetLovers.Count > 0 && !targetLovers.Contains(parent.pawn))
+                    if (targetLovers.Count > 0 && !targetLovers.Contains(casterPawn))
                     {
-                        return Dialog_MessageBox.CreateConfirmation("VRE_RelationshipWillBreakTarget".Translate(parent.pawn.LabelShortCap, pawn.LabelShortCap, targetLovers.ToStringSafeEnumerable()), confirmAction, destructive: true);
+                        foreach (Pawn lover in targetLovers)
+                        {
+                            if (lover != casterPawn)
+                            {
+                                return Dialog_MessageBox.CreateConfirmation("VRE_RelationshipWillBreakTarget".Translate(casterPawn.LabelShortCap, targetPawn.LabelShortCap, targetLovers.ToStringSafeEnumerable()), confirmAction, destructive: true);
+                            }
+                        }
                     }
                 }
 
@@ -178,8 +191,8 @@ namespace VanillaRacesExpandedHighmate
 
         public List<Pawn> GetLovers(Pawn pawn)
         {
-            tmpSpouses.Clear();
-            
+            List<Pawn> tmpSpouses = new List<Pawn>();
+          
             List<DirectPawnRelation> directRelations = pawn.relations.DirectRelations;
             for (int i = 0; i < directRelations.Count; i++)
             {
@@ -191,6 +204,7 @@ namespace VanillaRacesExpandedHighmate
                     
                 }
             }
+         
             return tmpSpouses;
         }
 

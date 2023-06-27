@@ -15,7 +15,7 @@
 	<VRE_CantUseLovinWithTraitAsexual>{0} cannot initiate lovin’ with {1} as {1} is Asexual.</VRE_CantUseLovinWithTraitAsexual>
 	<VRE_CantUseLovinWithTraitPrude>{0} cannot initiate lovin’ with {1} as {1} is a Prude.</VRE_CantUseLovinWithTraitPrude>
 	<VRE_RelationshipWillBreak>{0} will initiate lovin’ with {1}, despite being in a relationship with {2}. This will result in a break up.</VRE_RelationshipWillBreak>
-	<VRE_RelationshipWillBreakTarget>{0} will initiate lovin’ with {1}, despite {1} being in a relationship with {2}. This will result in a break up.</VRE_RelationshipWillBreakTarget>
+	<VRE_RelationshipWillBreakTarget>{0} will initiate lovin’ with {1}, despite the target, {1}, being in a relationship with {2}. This will result in a break up.</VRE_RelationshipWillBreakTarget>
 	<VRE_CantUseOnFamily>{0} can't initiate lovin’ with {1}, as they are blood relatives.</VRE_CantUseOnFamily>
 	<VRE_PsychicConceptionDesc>Psychic conception (pregnancy guaranteed)</VRE_PsychicConceptionDesc>
 	<VRE_LovinForPleasureDesc>Lovin’ for pleasure (pregnancy chance x0%)</VRE_LovinForPleasureDesc>

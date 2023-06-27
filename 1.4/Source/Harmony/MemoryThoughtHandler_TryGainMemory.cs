@@ -32,7 +32,7 @@ namespace VanillaRacesExpandedHighmate
 
                     }
                     __instance.RemoveMemory(__instance.OldestMemoryOfDef(ThoughtDefOf.GotSomeLovin));
-                    __instance.pawn.needs?.mood?.thoughts?.memories?.TryGainMemory(InternalDefOf.VRE_GotSomeLovin);
+                    __instance.pawn.needs?.mood?.thoughts?.memories?.TryGainMemory(InternalDefOf.VRE_GotSomeLovin, otherPawn);
                     __instance.pawn.needs?.mood?.thoughts?.memories?.TryGainMemory(InternalDefOf.VRE_WhatAPerfectBody, otherPawn);
                 } else if (StaticCollectionsClass.pawnsWhoFucked.Contains(__instance.pawn))
                 {
