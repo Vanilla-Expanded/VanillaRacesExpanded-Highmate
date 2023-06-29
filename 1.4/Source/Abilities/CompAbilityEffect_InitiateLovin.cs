@@ -150,9 +150,7 @@ namespace VanillaRacesExpandedHighmate
             if (targetPawn != null)
             {
 
-               if (!ModsConfig.IdeologyActive || (ModsConfig.IdeologyActive &&
-               targetPawn.Ideo?.HasPrecept(InternalDefOf.Lovin_FreeApproved) != true &&
-               casterPawn.Ideo?.HasPrecept(InternalDefOf.Lovin_FreeApproved) != true))
+               if (!CheckHasAnyOfThePrecepts(targetPawn, casterPawn))
                 {
                     List<Pawn> casterLovers = GetLovers(casterPawn);
                     List<Pawn> targetLovers = GetLovers(targetPawn);
@@ -185,7 +183,20 @@ namespace VanillaRacesExpandedHighmate
         }
 
 
-       
+       public bool CheckHasAnyOfThePrecepts(Pawn targetPawn, Pawn casterPawn)
+       {
+            if (ModsConfig.IdeologyActive)
+            {
+                bool ideosOnCaster = (casterPawn.Ideo?.HasPrecept(InternalDefOf.Lovin_FreeApproved) != true) ||
+                    (casterPawn.Ideo?.HasPrecept(InternalDefOf.Lovin_Free) != true);
+
+                bool ideosOnTarget = (targetPawn.Ideo?.HasPrecept(InternalDefOf.Lovin_FreeApproved) != true) ||
+                    (targetPawn.Ideo?.HasPrecept(InternalDefOf.Lovin_Free) != true);
+
+                return ideosOnCaster && ideosOnTarget;
+            }
+            return false;
+       }
 
 
 

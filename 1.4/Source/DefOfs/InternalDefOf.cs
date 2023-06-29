@@ -87,6 +87,8 @@ namespace VanillaRacesExpandedHighmate
         [MayRequireIdeology]
         public static PreceptDef Lovin_FreeApproved;
 
+        public static PreceptDef Lovin_Free;
+
         [MayRequire("VanillaExpanded.VanillaTraitsExpanded")]
         public static TraitDef VTE_Prude;
 
