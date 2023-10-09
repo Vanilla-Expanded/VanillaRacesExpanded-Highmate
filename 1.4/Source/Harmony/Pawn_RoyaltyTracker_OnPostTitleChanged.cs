@@ -15,7 +15,7 @@ namespace VanillaRacesExpandedHighmate
         public static void Postfix(Pawn_RoyaltyTracker __instance, Faction faction, RoyalTitleDef prevTitle, RoyalTitleDef newTitle)
         {
             if (newTitle != null && __instance.pawn.IsColonist && PawnGenerator.IsBeingGenerated(__instance.pawn) is false
-                && Current.CreatingWorld is null && __instance.pawn.Dead is false
+                && Current.CreatingWorld is null && __instance.pawn.Dead is false && __instance.pawn.Map!=null
                 && (prevTitle is null || prevTitle.seniority < newTitle.seniority)
                 && (newTitle == InternalDefOf.Baron || prevTitle is null && newTitle.seniority > InternalDefOf.Baron.seniority)
                 && faction == Faction.OfEmpire)
