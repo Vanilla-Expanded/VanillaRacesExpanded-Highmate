@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<VFECore.PregnancyApproachDef>
+		<defName>VRE_PsychicConception</defName>
+		<label>Psychic conception (pregnancy guaranteed)</label>
+		<cancelLabel>No psychic conception</cancelLabel>
+		<iconPath>UI/Icons/Pregnancyapproaches/RhythmMode_PsychicConception</iconPath>
+		<pregnancyChanceForPartners>20</pregnancyChanceForPartners>
+		<requiredGene>PsychicBonding</requiredGene>
+	</VFECore.PregnancyApproachDef>
+
+	<VFECore.PregnancyApproachDef>
+		<defName>VRE_LovinForPleasure</defName>
+		<label>Lovin’ for pleasure (pregnancy chance x0%)</label>
+		<cancelLabel>Normal lovin'</cancelLabel>
+		<iconPath>UI/Icons/Pregnancyapproaches/RhythmMode_LovinForPleasure</iconPath>
+		<pregnancyChanceForPartners>0</pregnancyChanceForPartners>
+		<requiredGene>VRE_Libido_VeryHigh</requiredGene>
+		<requireDifferentGender>false</requireDifferentGender>
+		<lovinDurationMultiplier>1.25</lovinDurationMultiplier>
+	</VFECore.PregnancyApproachDef>
+	
+</Defs>

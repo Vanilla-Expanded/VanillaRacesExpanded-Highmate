@@ -5,6 +5,7 @@ using System.Text;
 using UnityEngine;
 using Verse;
 using RimWorld;
+using VFECore;
 
 namespace VanillaRacesExpandedHighmate
 {
@@ -95,6 +96,6 @@ namespace VanillaRacesExpandedHighmate
         public static HediffDef VRE_PsychicBondBloodlust;
         public static HediffDef VRE_PsychicBondGreatMemory;
         public static HediffDef VRE_PsychicBondAbrasive;
-        public static GeneDef VRE_Libido_VeryHigh, PsychicBonding;
+        public static PregnancyApproachDef VRE_LovinForPleasure, VRE_PsychicConception;
     }
 }
