@@ -96,6 +96,5 @@ namespace VanillaRacesExpandedHighmate
         public static HediffDef VRE_PsychicBondBloodlust;
         public static HediffDef VRE_PsychicBondGreatMemory;
         public static HediffDef VRE_PsychicBondAbrasive;
-        public static PregnancyApproachDef VRE_LovinForPleasure, VRE_PsychicConception;
     }
 }

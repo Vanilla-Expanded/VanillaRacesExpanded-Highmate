@@ -12,34 +12,44 @@ namespace VanillaRacesExpandedHighmate
         public static Dictionary<Pawn_RelationsTracker, PregnancyApproachData> pawnPregnancyApproachData = new();
         public static void Postfix(Pawn_RelationsTracker __instance)
         {
-            if (Scribe.mode != LoadSaveMode.Saving)
+            try
             {
-                var data = __instance.GetBackCompat();
-                Scribe_Deep.Look(ref data, "VRE_additionalPregnancyApproachData");
-                if (data != null)
+                if (Scribe.mode != LoadSaveMode.Saving)
                 {
-                    pawnPregnancyApproachData[__instance] = data;
-                }
-                if (data != null)
-                {
-                    if (data.pawnsWithPsychicConception != null)
+                    var data = __instance.GetBackCompat();
+                    Scribe_Deep.Look(ref data, "VRE_additionalPregnancyApproachData");
+                    if (data != null)
                     {
-                        foreach (var pawn in data.pawnsWithPsychicConception)
-                        {
-                            pawn.relations.GetAdditionalPregnancyApproachData().partners[__instance.pawn] = InternalDefOf.VRE_PsychicConception;
-                            __instance.pawn.relations.GetAdditionalPregnancyApproachData().partners[pawn] = InternalDefOf.VRE_PsychicConception;
-                        }
+                        pawnPregnancyApproachData[__instance] = data;
                     }
+                    if (data != null)
+                    {
+                        var VRE_LovinForPleasure = DefDatabase<PregnancyApproachDef>.GetNamed("VRE_LovinForPleasure");
+                        var VRE_PsychicConception = DefDatabase<PregnancyApproachDef>.GetNamed("VRE_PsychicConception");
 
-                    if (data.pawnsWithLovinForPleasure != null)
-                    {
-                        foreach (var pawn in data.pawnsWithLovinForPleasure)
+                        if (data.pawnsWithPsychicConception != null)
                         {
-                            pawn.relations.GetAdditionalPregnancyApproachData().partners[__instance.pawn] = InternalDefOf.VRE_LovinForPleasure;
-                            __instance.pawn.relations.GetAdditionalPregnancyApproachData().partners[pawn] = InternalDefOf.VRE_LovinForPleasure;
+                            foreach (var pawn in data.pawnsWithPsychicConception)
+                            {
+                                pawn.relations.GetAdditionalPregnancyApproachData().partners[__instance.pawn] = VRE_PsychicConception;
+                                __instance.pawn.relations.GetAdditionalPregnancyApproachData().partners[pawn] = VRE_PsychicConception;
+                            }
+                        }
+
+                        if (data.pawnsWithLovinForPleasure != null)
+                        {
+                            foreach (var pawn in data.pawnsWithLovinForPleasure)
+                            {
+                                pawn.relations.GetAdditionalPregnancyApproachData().partners[__instance.pawn] = VRE_LovinForPleasure;
+                                __instance.pawn.relations.GetAdditionalPregnancyApproachData().partners[pawn] = VRE_LovinForPleasure;
+                            }
                         }
                     }
                 }
+            }
+            catch
+            {
+
             }
         }
 
