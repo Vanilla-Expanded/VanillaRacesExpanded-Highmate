@@ -47,10 +47,6 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
-    <Reference Include="VFECore">
-      <HintPath>..\..\..\VanillaExpandedFramework\1.4\Assemblies\VFECore.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Krafs.Publicizer">
@@ -78,7 +74,6 @@
     <Compile Include="Harmony\AttackTargetFinder_NonCombatantScore.cs" />
     <Compile Include="Harmony\Gene_Notify_PawnDied.cs" />
     <Compile Include="Harmony\HarmonyInstance.cs" />
-    <Compile Include="Harmony\Pawn_RelationsTracker_ExposeData_Patch.cs" />
     <Compile Include="Harmony\Pawn_RoyaltyTracker_OnPostTitleChanged.cs" />
     <Compile Include="Harmony\PregnancyApproachData.cs" />
     <Compile Include="PsychicBond\HediffSet_AddDirect_Patch.cs" />
