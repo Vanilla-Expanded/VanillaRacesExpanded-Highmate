@@ -6,7 +6,7 @@ using RimWorld;
 
 namespace VanillaRacesExpandedHighmate
 {
-    [StaticConstructorOnStartup]
+
     public class Need_Lovin : Need
 	{
 
@@ -42,7 +42,7 @@ namespace VanillaRacesExpandedHighmate
 				{
 					return false;
 				}
-				if (pawn.HasActiveGene(InternalDefOf.VRE_LovinDependency))
+				if (!pawn.HasActiveGene(InternalDefOf.VRE_LovinDependency))
 				{
 					return false;
 				}
