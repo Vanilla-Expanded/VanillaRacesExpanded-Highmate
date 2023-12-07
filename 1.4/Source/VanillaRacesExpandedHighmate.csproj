@@ -103,6 +103,7 @@
     <Compile Include="PsychicBond\TraitRequirement.cs" />
     <Compile Include="StaticCollections\StaticCollectionsClass.cs" />
     <Compile Include="Thoughts\ThoughtWorker_LovinNeed.cs" />
+    <Compile Include="Utils\Utils.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
