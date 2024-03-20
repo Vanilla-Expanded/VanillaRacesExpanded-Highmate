@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+	<Operation Class="VanillaRacesExpandedHighmate.PatchOperationModOption">
+
+		<match Class="PatchOperationAdd">
+			<xpath>/Defs/XenotypeDef[defName="Highmate"]/genes</xpath>
+			<value>
+				<li>VRE_FelineEars</li>
+				<li>VRE_FelineTail</li>
+				<li>VRE_PerfectBody</li>
+				<li>VRE_HighmateHair</li>
+				<li>VRE_Distressed</li>
+				<li>VRE_Harmless</li>
+				<li>VRE_RecessiveGenome</li>
+				<li>AptitudeStrong_Cooking</li>
+
+			</value>
+		</match>
+		<nomatch Class="PatchOperationAdd">
+			<xpath>/Defs/XenotypeDef[defName="Highmate"]/genes</xpath>
+			<value>
+
+				<li>VRE_PerfectBody</li>
+				<li>VRE_HighmateHair</li>
+				<li>VRE_Distressed</li>
+				<li>VRE_Harmless</li>
+				<li>VRE_RecessiveGenome</li>
+				<li>AptitudeStrong_Cooking</li>
+
+			</value>
+		</nomatch>
+
+	</Operation>
+
+
+	<Operation Class="PatchOperationRemove">
+		<xpath>/Defs/XenotypeDef[defName="Highmate"]/genes/li[text()="Hair_LongOnly"]</xpath>
+
+	</Operation>
+
+</Patch>
+

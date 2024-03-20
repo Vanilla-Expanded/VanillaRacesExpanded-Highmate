@@ -49,7 +49,7 @@ namespace VanillaRacesExpandedHighmate
             {
                 ticksLeft = 1250;
                 pawn.apparel.Notify_ApparelChanged();
-                pawn.Drawer.renderer.graphics.apparelGraphics.Clear();
+                //pawn.Drawer.renderer.graphics.apparelGraphics.Clear();
 
                 if (!ModsConfig.IdeologyActive || (ModsConfig.IdeologyActive &&
                 pawn.Ideo?.HasPrecept(InternalDefOf.Lovin_FreeApproved) != true &&
@@ -78,7 +78,7 @@ namespace VanillaRacesExpandedHighmate
                     Partner.jobs.StartJob(newJob, JobCondition.InterruptForced);
 
                     Find.HistoryEventsManager.RecordEvent(new HistoryEvent(HistoryEventDefOf.InitiatedLovin, pawn.Named(HistoryEventArgsNames.Doer)));
-                    if (InteractionWorker_RomanceAttempt.CanCreatePsychicBondBetween_NewTemp(pawn, Partner) && InteractionWorker_RomanceAttempt.TryCreatePsychicBondBetween(pawn, Partner) && (PawnUtility.ShouldSendNotificationAbout(pawn) || PawnUtility.ShouldSendNotificationAbout(Partner)))
+                    if (InteractionWorker_RomanceAttempt.CanCreatePsychicBondBetween(pawn, Partner) && InteractionWorker_RomanceAttempt.TryCreatePsychicBondBetween(pawn, Partner) && (PawnUtility.ShouldSendNotificationAbout(pawn) || PawnUtility.ShouldSendNotificationAbout(Partner)))
                     {
                         Find.LetterStack.ReceiveLetter("LetterPsychicBondCreatedLovinLabel".Translate(), "LetterPsychicBondCreatedLovinText".Translate(pawn.Named("BONDPAWN"), Partner.Named("OTHERPAWN")), LetterDefOf.PositiveEvent, new LookTargets(pawn, Partner));
                     }
@@ -115,7 +115,7 @@ namespace VanillaRacesExpandedHighmate
             toil2.AddFinishAction(delegate
             {
 
-                pawn.Drawer.renderer.graphics.SetApparelGraphicsDirty();
+                //pawn.Drawer.renderer.graphics.SetApparelGraphicsDirty();
                 PortraitsCache.SetDirty(pawn);
                 GlobalTextureAtlasManager.TryMarkPawnFrameSetDirty(pawn);
 

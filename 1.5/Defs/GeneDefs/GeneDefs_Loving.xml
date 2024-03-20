@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<GeneDef ParentName="LibidoBase">
+		<defName>VRE_Libido_VeryHigh</defName>
+		<label>very high libido</label>
+		<description>Carriers of this gene are very keen to engage in lovin’ with their partner, or with anyone else for that matter. They can initiate lovin’ anywhere and anytime.</description>
+		<customEffectDescriptions>
+			<li>Increases the chance of lovin' dramatically.</li>
+		</customEffectDescriptions>
+		<iconPath>UI/Icons/Genes/Gene_VeryHighLibido</iconPath>
+		<displayOrderInCategory>10.1</displayOrderInCategory>
+		<lovinMTBFactor>0.25</lovinMTBFactor>
+		<biostatMet>-2</biostatMet>
+		<biostatCpx>1</biostatCpx>
+		<abilities>
+			<li>VRE_InitiateLovin</li>
+		</abilities>
+		<descriptionHyperlinks>
+			<AbilityDef>VRE_InitiateLovin</AbilityDef>
+		</descriptionHyperlinks>
+	</GeneDef>
+	<GeneDef>
+		<defName>VRE_LovinDependency</defName>
+		<label>lovin' dependency</label>
+		<description>Carriers of this gene need to partake in lovin’ on a regular basis to survive. After 5 days without lovin’, carriers will suffer from lovin’ deficiency. After 30 days without lovin’, they may abandon the colony.</description>
+		<iconPath>UI/Icons/Genes/Gene_LovinDependency</iconPath>
+		<biostatMet>3</biostatMet>
+		<biostatCpx>1</biostatCpx>
+		<displayCategory>Reproduction</displayCategory>
+		<causesNeed>VRE_Lovin</causesNeed>
+		<modExtensions>
+			<li Class="VanillaGenesExpanded.GeneExtension">
+				
+				<hediffToWholeBody>VRE_LovinDependencyHediff</hediffToWholeBody>
+			</li>
+		</modExtensions>
+	</GeneDef>
+</Defs>

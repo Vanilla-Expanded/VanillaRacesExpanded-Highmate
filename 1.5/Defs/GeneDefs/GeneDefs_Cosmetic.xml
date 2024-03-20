@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<GeneDef ParentName="GeneEarsBase">
+		<defName>VRE_FelineEars</defName>
+		<label>feline ears</label>
+		<description>Carriers of this gene will have soft, furry, feline ears.</description>
+		<iconPath>UI/Icons/Genes/Gene_FelineEars</iconPath>
+		<renderNodeProperties Inherit="False">
+			<li>
+				<nodeClass>PawnRenderNode_AttachmentHead</nodeClass>
+				<workerClass>PawnRenderNodeWorker_FlipWhenCrawling</workerClass>
+				<texPath>Things/Pawn/Humanlike/BodyParts/FelineEars/FelineEars</texPath>
+				<useSkinShader>true</useSkinShader>
+				<colorType>Skin</colorType>
+				<drawData>
+					<defaultData>
+						<layer>70</layer>
+					</defaultData>
+				</drawData>
+				<parentTagDef>Head</parentTagDef>
+			</li>
+		</renderNodeProperties>
+		<biostatMet>0</biostatMet>
+		<biostatCpx>0</biostatCpx>
+	</GeneDef>
+	<GeneDef ParentName="GeneTailBase">
+		<defName>VRE_FelineTail</defName>
+		<label>feline tail</label>
+		<description>Carriers of this gene grow a furry tail that does not have any purpose other than decorative.</description>
+		<iconPath>UI/Icons/Genes/Gene_TailFeline</iconPath>
+		<iconColor>(0.75, 0.75, 0.75)</iconColor>
+		<biostatCpx>0</biostatCpx>
+		<biostatMet>0</biostatMet>
+		<renderNodeProperties>
+			<li>
+				<workerClass>PawnRenderNodeWorker_AttachmentBody</workerClass>
+				<texPath>Things/Pawn/Humanlike/BodyParts/FelineTail/FelineTail</texPath>
+				<colorType>Hair</colorType>
+				<overrideMeshSize>(1, 1)</overrideMeshSize>
+				<parentTagDef>Body</parentTagDef>
+				<rotDrawMode>Fresh, Rotting</rotDrawMode>
+				<drawData>
+					<scaleOffsetByBodySize>true</scaleOffsetByBodySize>
+					<defaultData>
+						<layer>-2</layer>
+					</defaultData>
+					<dataNorth>
+						<offset>(0, 0.2, -0.15)</offset>
+						<layer>90</layer>
+					</dataNorth>
+					<dataSouth>
+						<offset>0, -0.1, -0.15)</offset>
+					</dataSouth>
+					<dataEast>
+						<offset>(-0.5, -0.1, -0.15)</offset>
+					</dataEast>
+					<dataWest>
+						<offset>(0.5, -0.1, -0.15)</offset>
+					</dataWest>
+				</drawData>
+			</li>
+		</renderNodeProperties>
+	</GeneDef>
+	<GeneDef>
+		<defName>VRE_PerfectBody</defName>
+		<label>perfect body</label>
+		<labelShortAdj>perfect</labelShortAdj>
+		<description>Carriers of this gene have perfect bodies with no flaws what-so-ever. Their bodies are symmetrical, with soft skin that feels like silk to the touch. People who get intimate with carriers of this gene will not be satisfied when lovin’ anyone without perfect body.</description>
+		<exclusionTags>
+			<li>AG_Bodies</li>
+			<li>Bodies</li>
+			<li>Body</li>
+		</exclusionTags>
+		<marketValueFactor>1.05</marketValueFactor>
+		<biostatCpx>1</biostatCpx>
+		<biostatMet>-1</biostatMet>
+		<displayOrderInCategory>435</displayOrderInCategory>
+		<iconPath>UI/Icons/Genes/Gene_PerfectBodies</iconPath>
+		
+		
+		<fur>VRE_PerfectBody</fur>
+		<skinIsHairColor>false</skinIsHairColor>
+		<tattoosVisible>false</tattoosVisible>
+		<renderNodeProperties>
+			<li>
+				<nodeClass>PawnRenderNode_Fur</nodeClass>
+				<workerClass>PawnRenderNodeWorker_Fur</workerClass>
+				<baseLayer>5</baseLayer>
+				<rotDrawMode>Fresh, Rotting</rotDrawMode>
+				<colorType>Skin</colorType>
+				<parentTagDef>Body</parentTagDef>
+			</li>
+		</renderNodeProperties>
+		<modExtensions>
+			<li Class="VanillaGenesExpanded.GeneExtension">
+				<useSkinColorForFur>true</useSkinColorForFur>
+			</li>
+		</modExtensions>
+	</GeneDef>
+	<GeneDef ParentName="GeneHairStyleBase">
+		<defName>VRE_HighmateHair</defName>
+		<label>beautiful-haired</label>
+		<displayCategory>Cosmetic</displayCategory>
+		<description>Carriers of this gene are guaranteed to use specific Highmate hair styles.</description>
+		<iconPath>UI/Icons/Genes/Gene_BeautifulHaired</iconPath>
+		<biostatCpx>0</biostatCpx>
+		<biostatMet>0</biostatMet>
+		<hairTagFilter>
+			<whitelist>true</whitelist>
+			<tags>
+				<li>VRE_HighmateHair</li>
+			</tags>
+		</hairTagFilter>
+	</GeneDef>
+</Defs>
