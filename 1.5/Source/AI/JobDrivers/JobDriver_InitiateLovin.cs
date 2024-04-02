@@ -48,8 +48,8 @@ namespace VanillaRacesExpandedHighmate
             toil.initAction = delegate
             {
                 ticksLeft = 1250;
-                pawn.apparel.Notify_ApparelChanged();
-                //pawn.Drawer.renderer.graphics.apparelGraphics.Clear();
+                pawn.health.AddHediff(InternalDefOf.VRE_Naked);
+                pawn.Drawer.renderer.SetAllGraphicsDirty();
 
                 if (!ModsConfig.IdeologyActive || (ModsConfig.IdeologyActive &&
                 pawn.Ideo?.HasPrecept(InternalDefOf.Lovin_FreeApproved) != true &&
@@ -114,10 +114,9 @@ namespace VanillaRacesExpandedHighmate
             toil2.handlingFacing = true;
             toil2.AddFinishAction(delegate
             {
-
-                //pawn.Drawer.renderer.graphics.SetApparelGraphicsDirty();
-                PortraitsCache.SetDirty(pawn);
-                GlobalTextureAtlasManager.TryMarkPawnFrameSetDirty(pawn);
+                Hediff hediff= pawn.health.hediffSet.GetFirstHediffOfDef(InternalDefOf.VRE_Naked);
+                if (hediff != null) { pawn.health.RemoveHediff(hediff); }               
+                pawn.Drawer.renderer.SetAllGraphicsDirty();
 
                 Need_Lovin need = pawn?.needs?.TryGetNeed<Need_Lovin>();
                 if (need != null)

@@ -87,6 +87,8 @@
     <Compile Include="Harmony\AttackTargetFinder_NonCombatantScore.cs" />
     <Compile Include="Harmony\Gene_Notify_PawnDied.cs" />
     <Compile Include="Harmony\HarmonyInstance.cs" />
+    <Compile Include="Harmony\PawnRenderNodeWorker_Apparel_Body_CanDrawNow.cs" />
+    <Compile Include="Harmony\PawnRenderNodeWorker_Apparel_Head_HeadgearVisible.cs" />
     <Compile Include="Harmony\Pawn_RoyaltyTracker_OnPostTitleChanged.cs" />
     <Compile Include="Harmony\PregnancyApproachData.cs" />
     <Compile Include="PsychicBond\HediffSet_AddDirect_Patch.cs" />
