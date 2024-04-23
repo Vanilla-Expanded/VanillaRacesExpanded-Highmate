@@ -3,6 +3,7 @@
 
 	<HediffDef Name="VRE_BondHediff_Base" Abstract="True">
 		<hediffClass>HediffWithComps</hediffClass>
+		<isBad>false</isBad>
 	</HediffDef>
 
 	<HediffDef ParentName="VRE_BondHediff_Base">
