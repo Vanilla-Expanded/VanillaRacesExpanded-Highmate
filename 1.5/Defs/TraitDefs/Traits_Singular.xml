@@ -6,7 +6,7 @@
 		<degreeDatas>
 			<li>
 				<label>flirty</label>
-				<description>{PAWN_nameDef} is always ready with a flirtatious comment or a playful compliment, lifting the spirits of those around {PAWN_objective}. {PAWN_pronoun} has a knack for making others feel special and desired, however this may sometimes lead to complicated situations when {PAWN_pronoun}'s playful intentions are misinterpreted.</description>
+				<description>{PAWN_nameDef} is always ready with a flirtatious comment or a playful compliment, lifting the spirits of those around {PAWN_objective}. {PAWN_pronoun} has a knack for making others feel special and desired, however this may sometimes lead to complicated situations when {PAWN_objective} playful intentions are misinterpreted.</description>
 			</li>
 		</degreeDatas>
 		<conflictingTraits>
