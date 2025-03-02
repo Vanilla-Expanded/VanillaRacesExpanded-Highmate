@@ -103,7 +103,6 @@
     <Compile Include="PsychicBond\Pawn_SpawnSetup_Patch.cs" />
     <Compile Include="Harmony\PregnancyUtility_GetInheritedGenes.cs" />
     <Compile Include="PsychicBond\SkillRecord_Interval_Patch.cs" />
-    <Compile Include="Harmony\Thought_Memory_DurationTicks.cs" />
     <Compile Include="Harmony\TraitSet_GainTrait.cs" />
     <Compile Include="Harmony\TraitSet_RemoveTrait.cs" />
     <Compile Include="InteractionWorkers\InteractionWorker_FlirtingAttempt.cs" />

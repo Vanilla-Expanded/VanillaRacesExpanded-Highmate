@@ -18,7 +18,7 @@ namespace VanillaRacesExpandedHighmate
     public static class VanillaRacesExpandedHighmate_MemoryThoughtHandler_TryGainMemory_Patch
     {
         [HarmonyPostfix]
-        static void AddToPawnsWhoFucked(Thought_Memory newThought, Pawn otherPawn, MemoryThoughtHandler __instance)
+        static void HandlePawnMemories(Thought_Memory newThought, Pawn otherPawn, MemoryThoughtHandler __instance)
         {
             if(newThought.def == ThoughtDefOf.GotSomeLovin)
             {
@@ -38,6 +38,14 @@ namespace VanillaRacesExpandedHighmate
                 {
 
                     __instance.RemoveMemory(__instance.OldestMemoryOfDef(ThoughtDefOf.GotSomeLovin));
+                }
+            }
+
+            if (newThought.MoodOffset() < 0 || newThought is Thought_MemorySocial { opinionOffset: < 0 })
+            {
+                if (StaticCollectionsClass.distressedTraitPawns.Contains(__instance.pawn) && StaticCollectionsClass.distressedThoughts.Contains(newThought.def))
+                {
+                    newThought.durationTicksOverride = Mathf.RoundToInt(newThought.DurationTicks * 2);
                 }
             }
         }
