@@ -20,32 +20,35 @@ namespace VanillaRacesExpandedHighmate
         [HarmonyPostfix]
         static void HandlePawnMemories(Thought_Memory newThought, Pawn otherPawn, MemoryThoughtHandler __instance)
         {
-            if(newThought.def == ThoughtDefOf.GotSomeLovin)
+            if (newThought.pawn != null)
             {
-                if (otherPawn.genes?.HasGene(InternalDefOf.VRE_PerfectBody) == true)
+                if(newThought.def == ThoughtDefOf.GotSomeLovin)
                 {
-                    StaticCollectionsClass.AddToPawnsWhoFucked(__instance.pawn);
-                    GameComponent_PawnListsSaver comp = Current.Game.GetComponent<GameComponent_PawnListsSaver>();
-                    if (comp != null)
+                    if (otherPawn.genes?.HasGene(InternalDefOf.VRE_PerfectBody) == true)
                     {
-                        comp.pawnsWhoFucked_backup = StaticCollectionsClass.pawnsWhoFucked;
+                        StaticCollectionsClass.AddToPawnsWhoFucked(__instance.pawn);
+                        GameComponent_PawnListsSaver comp = Current.Game.GetComponent<GameComponent_PawnListsSaver>();
+                        if (comp != null)
+                        {
+                            comp.pawnsWhoFucked_backup = StaticCollectionsClass.pawnsWhoFucked;
 
+                        }
+                        __instance.RemoveMemory(__instance.OldestMemoryOfDef(ThoughtDefOf.GotSomeLovin));
+                        __instance.pawn.needs?.mood?.thoughts?.memories?.TryGainMemory(InternalDefOf.VRE_GotSomeLovin, otherPawn);
+                        __instance.pawn.needs?.mood?.thoughts?.memories?.TryGainMemory(InternalDefOf.VRE_WhatAPerfectBody, otherPawn);
+                    } else if (StaticCollectionsClass.pawnsWhoFucked.Contains(__instance.pawn))
+                    {
+
+                        __instance.RemoveMemory(__instance.OldestMemoryOfDef(ThoughtDefOf.GotSomeLovin));
                     }
-                    __instance.RemoveMemory(__instance.OldestMemoryOfDef(ThoughtDefOf.GotSomeLovin));
-                    __instance.pawn.needs?.mood?.thoughts?.memories?.TryGainMemory(InternalDefOf.VRE_GotSomeLovin, otherPawn);
-                    __instance.pawn.needs?.mood?.thoughts?.memories?.TryGainMemory(InternalDefOf.VRE_WhatAPerfectBody, otherPawn);
-                } else if (StaticCollectionsClass.pawnsWhoFucked.Contains(__instance.pawn))
-                {
-
-                    __instance.RemoveMemory(__instance.OldestMemoryOfDef(ThoughtDefOf.GotSomeLovin));
                 }
-            }
 
-            if (newThought.MoodOffset() < 0 || newThought is Thought_MemorySocial { opinionOffset: < 0 })
-            {
-                if (StaticCollectionsClass.distressedTraitPawns.Contains(__instance.pawn) && StaticCollectionsClass.distressedThoughts.Contains(newThought.def))
+                if (newThought.MoodOffset() < 0 || newThought is Thought_MemorySocial { opinionOffset: < 0 })
                 {
-                    newThought.durationTicksOverride = Mathf.RoundToInt(newThought.DurationTicks * 2);
+                    if (StaticCollectionsClass.distressedTraitPawns.Contains(__instance.pawn) && StaticCollectionsClass.distressedThoughts.Contains(newThought.def))
+                    {
+                        newThought.durationTicksOverride = Mathf.RoundToInt(newThought.DurationTicks * 2);
+                    }
                 }
             }
         }
