@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<GeneDef>
+		<defName>VRE_DominantGenome</defName>
+		<label>dominant genome</label>
+		<description>Carriers of this gene inherently pass on all their traits to offspring, as this gene overpowers the genetic contributions of the other parent during reproduction. If both partners have dominant genome gene, the genes passed down will be randomized.</description>
+
+		<iconPath>UI/Icons/Genes/Gene_GenomeDominant</iconPath>
+		<displayOrderInCategory>2000</displayOrderInCategory>
+		<displayCategory>Reproduction</displayCategory>
+		<biostatMet>-2</biostatMet>
+		<biostatCpx>0</biostatCpx>
+		<exclusionTags>
+			<li>VRE_Dominance</li>
+		</exclusionTags>
+	</GeneDef>
+	<GeneDef>
+		<defName>VRE_RecessiveGenome</defName>
+		<label>recessive genome</label>
+		<description>Carriers of this gene have a unique genetic makeup that recedes during reproduction, resulting in none of their traits being passed on to their offspring. If both partners have recessive genome gene, the genes passed down will be randomized.</description>
+
+		<iconPath>UI/Icons/Genes/Gene_GenomeRecessive</iconPath>
+		<displayOrderInCategory>2001</displayOrderInCategory>
+		<displayCategory>Reproduction</displayCategory>
+		<biostatMet>1</biostatMet>
+		<biostatCpx>0</biostatCpx>
+		<exclusionTags>
+			<li>VRE_Dominance</li>
+		</exclusionTags>
+	</GeneDef>
+
+</Defs>

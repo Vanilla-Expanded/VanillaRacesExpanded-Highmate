@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<HediffDef>
+		<defName>VRE_LovinDependencyHediff</defName>
+		<label>lovin' dependency</label>
+		<description>This person has a genetically-induced biochemical dependency on lovin'. They will need to partake in lovin’ on a regular basis to be content. After 5 days without lovin’, carriers will suffer from lovin’ deficiency. After 30 days without lovin’, they may abandon the colony.\n\nTakes effect after age: 16.</description>
+		<everCurableByItem>false</everCurableByItem>
+		<initialSeverity>0.001</initialSeverity>
+		<stages>
+			<li>
+      </li>
+		</stages>
+	</HediffDef>
+	<HediffDef>
+		<defName>VRE_Naked</defName>
+		<hediffClass>HediffWithComps</hediffClass>
+		<label>naked</label>
+		<description>This person is naked.</description>
+		<defaultLabelColor>(.8,0,0)</defaultLabelColor>
+		<scenarioCanAdd>false</scenarioCanAdd>
+		<maxSeverity>1.0</maxSeverity>
+		<stages>
+			<li>
+
+			</li>
+		</stages>
+	</HediffDef>
+</Defs>

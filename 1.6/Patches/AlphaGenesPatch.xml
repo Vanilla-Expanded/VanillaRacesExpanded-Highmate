@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Alpha Genes</li>
+		</mods>
+		<match Class="PatchOperationSequence">
+			<operations>
+				<li Class="PatchOperationAdd">
+					<xpath>/Defs/GeneDef[defName="VRE_FelineEars"]</xpath>
+					<value>
+						<displayCategory>AG_Cosmetic_Ears</displayCategory>
+					</value>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>/Defs/GeneDef[defName="VRE_FelineTail"]</xpath>
+					<value>
+						<displayCategory>AG_Cosmetic_Tails</displayCategory>
+					</value>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>/Defs/GeneDef[defName="VRE_PerfectBody"]</xpath>
+					<value>
+						<displayCategory>AG_Cosmetic_Bodies</displayCategory>
+					</value>
+				</li>
+			</operations>
+		</match>
+	</Operation>
+</Patch>

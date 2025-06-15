@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<ThoughtDef>
+		<defName>VRE_Flirted</defName>
+		<thoughtClass>Thought_MemorySocial</thoughtClass>
+		<durationDays>20</durationDays>
+		<stackLimit>3</stackLimit>
+		<developmentalStageFilter>Adult</developmentalStageFilter>
+		<socialTargetDevelopmentalStageFilter>Adult</socialTargetDevelopmentalStageFilter>
+		<nullifyingTraits>
+			<li>Psychopath</li>
+		</nullifyingTraits>
+		<stages>
+			<li>
+				<label>flirted with</label>
+				<baseOpinionOffset>5</baseOpinionOffset>
+			</li>
+		</stages>
+	</ThoughtDef>
+	<ThoughtDef>
+		<defName>VRE_WhatAPerfectBody</defName>
+		<thoughtClass>Thought_MemorySocial</thoughtClass>
+		<durationDays>14</durationDays>
+		<stackLimit>1</stackLimit>
+		<developmentalStageFilter>Adult</developmentalStageFilter>
+		<socialTargetDevelopmentalStageFilter>Adult</socialTargetDevelopmentalStageFilter>
+		<nullifyingTraits>
+			<li>Psychopath</li>
+		</nullifyingTraits>
+		<stages>
+			<li>
+				<label>what a perfect body</label>
+				<baseOpinionOffset>10</baseOpinionOffset>
+			</li>
+		</stages>
+	</ThoughtDef>
+	<ThoughtDef>
+		<defName>VRE_GotSomeLovin</defName>
+		<thoughtClass>Thought_MemorySocial</thoughtClass>
+		<durationDays>3</durationDays>
+		<stackLimit>10</stackLimit>
+		<stackedEffectMultiplier>0.6</stackedEffectMultiplier>
+		<developmentalStageFilter>Adult</developmentalStageFilter>
+		<stages>
+			<li>
+				<label>got some lovin'</label>
+				<description>There's nothing like a tumble between the sheets to lift the mood.</description>
+				<baseMoodEffect>16</baseMoodEffect>
+				<baseOpinionOffset>6</baseOpinionOffset>
+			</li>
+		</stages>
+	</ThoughtDef>
+</Defs>

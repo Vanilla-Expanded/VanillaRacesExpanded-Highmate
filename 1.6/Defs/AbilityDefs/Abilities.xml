@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+
+	<AbilityDef ParentName="AbilityTouchBase">
+		<defName>VRE_InitiateLovin</defName>
+		<label>initiate lovin'</label>
+		<description>Approach the target and initiate lovin’ with them. If in relationship with anyone else, this will be considered cheating and will result in a break up, unless the ideo has the "Lovin: Free and Approved" precept.</description>
+		<iconPath>UI/Gizmo/Gizmo_InitiateLovin</iconPath>
+		<casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+		<cooldownTicksRange>30000</cooldownTicksRange>
+		<hostile>false</hostile>
+		<verbProperties>
+			<verbClass>Verb_CastAbilityTouch</verbClass>
+			<drawAimPie>false</drawAimPie>
+			<range>-1</range>
+			<warmupTime>1</warmupTime>
+			<targetParams>
+				<canTargetAnimals>false</canTargetAnimals>
+				<canTargetSelf>false</canTargetSelf>
+				<canTargetBuildings>false</canTargetBuildings>
+				<canTargetMechs>false</canTargetMechs>
+			</targetParams>
+		</verbProperties>
+		<comps>
+			<li Class="VanillaRacesExpandedHighmate.CompProperties_InitiateLovin"/>
+		</comps>
+	</AbilityDef>
+	
+</Defs>
