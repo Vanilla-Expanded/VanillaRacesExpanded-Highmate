@@ -24,7 +24,7 @@ namespace VanillaRacesExpandedHighmate
             {
                 if(newThought.def == ThoughtDefOf.GotSomeLovin)
                 {
-                    if (otherPawn.genes?.HasGene(InternalDefOf.VRE_PerfectBody) == true)
+                    if (otherPawn.genes?.HasActiveGene(InternalDefOf.VRE_PerfectBody) == true)
                     {
                         StaticCollectionsClass.AddToPawnsWhoFucked(__instance.pawn);
                         GameComponent_PawnListsSaver comp = Current.Game.GetComponent<GameComponent_PawnListsSaver>();
@@ -42,14 +42,23 @@ namespace VanillaRacesExpandedHighmate
                         __instance.RemoveMemory(__instance.OldestMemoryOfDef(ThoughtDefOf.GotSomeLovin));
                     }
                 }
-
-                if (newThought.MoodOffset() < 0 || newThought is Thought_MemorySocial { opinionOffset: < 0 })
+                if (StaticCollectionsClass.distressedTraitPawns.Contains(__instance.pawn) && StaticCollectionsClass.distressedThoughts.Contains(newThought.def))
                 {
-                    if (StaticCollectionsClass.distressedTraitPawns.Contains(__instance.pawn) && StaticCollectionsClass.distressedThoughts.Contains(newThought.def))
+                    try
                     {
-                        newThought.durationTicksOverride = Mathf.RoundToInt(newThought.DurationTicks * 2);
+                        if (newThought.MoodOffset() < 0 || newThought is Thought_MemorySocial { opinionOffset: < 0 })
+                        {
+                            {
+                                newThought.durationTicksOverride = Mathf.RoundToInt(newThought.DurationTicks * 2);
+                            }
+                        }
+                    }   
+                    catch (Exception e)
+                    { 
+                        Log.Error($"Error in {nameof(VanillaRacesExpandedHighmate_MemoryThoughtHandler_TryGainMemory_Patch)}: {e.Message}\n{e.StackTrace}");
                     }
                 }
+
             }
         }
     }
