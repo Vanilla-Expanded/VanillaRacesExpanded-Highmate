@@ -95,19 +95,19 @@ namespace VanillaRacesExpandedHighmate
             toil2.FailOn(() => Partner.CurJob == null || Partner.CurJob.def != InternalDefOf.VRE_InitiateLovin);
 
 
-            toil2.AddPreTickAction(delegate
+            toil2.AddPreTickIntervalAction(delegate(int delta)
             {
-                ticksLeft--;
+                ticksLeft -= delta;
                 if (ticksLeft <= 0)
                 {
                     ReadyForNextToil();
                 }
-                else if (pawn.IsHashIntervalTick(TicksBetweenHeartMotes))
+                else if (pawn.IsHashIntervalTick(TicksBetweenHeartMotes, delta))
                 {
                     FleckMaker.ThrowMetaIcon(pawn.Position, pawn.Map, FleckDefOf.Heart);
                 }
             });
-            toil2.tickAction = delegate
+            toil2.tickIntervalAction = delegate
             {
                 pawn.rotationTracker.FaceTarget(Partner);
             };
