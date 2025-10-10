@@ -4,6 +4,7 @@ using System;
 using RimWorld;
 using System.Collections.Generic;
 using System.Linq;
+using VEF.CacheClearing;
 
 
 namespace VanillaRacesExpandedHighmate
@@ -25,6 +26,8 @@ namespace VanillaRacesExpandedHighmate
 
         static StaticCollectionsClass()
         {
+
+            ClearCaches.clearCacheTypes.Add(typeof(StaticCollectionsClass));
             // Honestly, this list grew so big that using DefOf is just inconvenient at this point.
             distressedThoughts.AddRange(new[]
                 {
