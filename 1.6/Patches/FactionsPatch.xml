@@ -18,8 +18,7 @@
 	<Operation Class="PatchOperationAdd">
 		<xpath>/Defs/FactionDef[@Name="OutlanderFactionBase"]/xenotypeSet/xenotypeChances</xpath>
 		<value>
-			<VRE_Lowmate>0.0025</VRE_Lowmate>
-			
+			<VRE_Lowmate>0.0025</VRE_Lowmate>			
 		</value>
 	</Operation>
 
